@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Meadows Resort & Spa | Premium Oasis</title>
-    <!-- Google Fonts: Playfair Display for elegance, Poppins for clean reading -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -22,7 +20,7 @@
             --text-dark: #222222;
             --text-muted: #666666;
             --white: #ffffff;
-            --border-color: #e0e0e0;
+            --border-color: #dddddd;
             --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
             --shadow-lg: 0 15px 30px rgba(0,0,0,0.1);
             --transition: all 0.3s ease-in-out;
@@ -43,11 +41,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-dark);
-        }
-
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--primary-dark); }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         img { max-width: 100%; height: auto; display: block; }
@@ -55,361 +49,159 @@
         /* ==========================================================================
            TYPOGRAPHY & UTILITIES
            ========================================================================== */
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-title h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        .section-title p {
-            color: var(--accent-gold);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .container {
-            width: 90%;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .section-title p { color: var(--accent-gold); font-weight: 500; text-transform: uppercase; letter-spacing: 2px; }
+        .container { width: 90%; max-width: 1280px; margin: 0 auto; }
         .section-padding { padding: 100px 0; }
         
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent-gold);
-            color: var(--white);
-            font-weight: 500;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
+            display: inline-block; padding: 12px 30px; background-color: var(--accent-gold);
+            color: var(--white); font-weight: 500; letter-spacing: 1px; border: none;
+            cursor: pointer; transition: var(--transition);
         }
-        .btn:hover { background-color: var(--accent-hover); }
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary-dark);
-            color: var(--primary-dark);
-        }
-        .btn-outline:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-        }
+        .btn:hover { background-color: var(--accent-hover); color: var(--white); }
+        .btn-outline { background-color: transparent; border: 2px solid var(--primary-dark); color: var(--primary-dark); }
+        .btn-outline:hover { background-color: var(--primary-dark); color: var(--white); }
 
         /* ==========================================================================
            HEADER & NAVIGATION
            ========================================================================== */
         header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background-color: transparent;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: var(--transition);
+            position: fixed; top: 0; left: 0; right: 0; background-color: transparent;
+            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: var(--transition);
         }
-        header.scrolled {
-            background-color: var(--white);
-            padding: 15px 5%;
-            box-shadow: var(--shadow-sm);
-        }
-        header.scrolled .logo, header.scrolled nav ul li a {
-            color: var(--primary-dark);
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        nav ul {
-            display: flex;
-            gap: 30px;
-        }
-        nav ul li a {
-            color: var(--white);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-        }
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px; left: 0;
-            width: 0; height: 2px;
-            background-color: var(--accent-gold);
-            transition: var(--transition);
-        }
+        header.scrolled { background-color: var(--white); padding: 15px 5%; box-shadow: var(--shadow-sm); }
+        header.scrolled .logo, header.scrolled nav ul li a { color: var(--primary-dark); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); display: flex; align-items: center; gap: 10px; }
+        nav ul { display: flex; gap: 30px; }
+        nav ul li a { color: var(--white); font-weight: 500; font-size: 0.95rem; position: relative; transition: var(--transition); }
+        nav ul li a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--accent-gold); transition: var(--transition); }
         nav ul li a:hover::after { width: 100%; }
-        
-        .menu-toggle {
-            display: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+        .menu-toggle { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
         header.scrolled .menu-toggle { color: var(--primary-dark); }
 
         /* ==========================================================================
-           HERO SECTION & BOOKING WIDGET
+           HERO SECTION & WIDGET
            ========================================================================== */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(27, 51, 35, 0.6), rgba(27, 51, 35, 0.6)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
+            display: flex; align-items: center; justify-content: center; text-align: center; position: relative;
         }
         .hero-content { color: var(--white); max-width: 800px; padding: 0 20px; }
-        .hero-content h1 {
-            color: var(--white);
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); color: var(--white); }
         .hero-content p { font-size: 1.2rem; margin-bottom: 30px; }
-
-        /* Booking Bar */
-        .booking-widget {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            padding: 20px 40px;
-            box-shadow: var(--shadow-lg);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            z-index: 100;
-            width: 80%;
-            max-width: 1000px;
+        
+        .booking-widget-hero {
+            position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+            background: var(--white); padding: 20px 40px; box-shadow: var(--shadow-lg);
+            display: flex; gap: 20px; align-items: center; z-index: 100; width: 80%; max-width: 1000px;
         }
-        .booking-input {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid var(--border-color);
-            padding-right: 20px;
-        }
+        .booking-input { flex: 1; display: flex; flex-direction: column; border-right: 1px solid var(--border-color); padding-right: 20px; }
         .booking-input:last-of-type { border-right: none; padding-right: 0; }
-        .booking-input label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-        .booking-input input, .booking-input select {
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            background: transparent;
-        }
+        .booking-input label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-bottom: 5px; text-transform: uppercase; }
+        .booking-input input, .booking-input select { border: none; outline: none; font-size: 1rem; font-family: 'Poppins', sans-serif; color: var(--text-dark); background: transparent; }
 
         /* ==========================================================================
-           ABOUT SECTION
+           ABOUT & ROOMS
            ========================================================================== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .about-img { position: relative; }
         .about-img img { box-shadow: var(--shadow-lg); }
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: -20px; left: -20px;
-            width: 100%; height: 100%;
-            border: 2px solid var(--accent-gold);
-            z-index: -1;
-        }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .about-text p { margin-bottom: 20px; color: var(--text-muted); }
+        .about-img::before { content: ''; position: absolute; top: -20px; left: -20px; width: 100%; height: 100%; border: 2px solid var(--accent-gold); z-index: -1; }
         
-        /* ==========================================================================
-           ACCOMMODATIONS (ROOMS)
-           ========================================================================== */
         .rooms { background-color: var(--bg-light); }
-        .room-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .room-card {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            overflow: hidden;
-        }
+        .room-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .room-card { background: var(--white); box-shadow: var(--shadow-sm); transition: var(--transition); overflow: hidden; }
         .room-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
         .room-img { height: 250px; overflow: hidden; position: relative; }
         .room-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
         .room-card:hover .room-img img { transform: scale(1.1); }
-        .room-price {
-            position: absolute;
-            bottom: 0; right: 0;
-            background: var(--primary-dark);
-            color: var(--accent-gold);
-            padding: 10px 20px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+        .room-price { position: absolute; bottom: 0; right: 0; background: var(--primary-dark); color: var(--accent-gold); padding: 10px 20px; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: bold; }
         .room-info { padding: 30px; }
-        .room-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .room-amenities {
-            display: flex;
-            gap: 15px;
-            margin: 15px 0;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-        }
+        .room-amenities { display: flex; gap: 15px; margin: 15px 0; color: var(--text-muted); border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
         .room-amenities i { color: var(--accent-gold); margin-right: 5px; }
 
         /* ==========================================================================
-           AMENITIES & WELLNESS
+           LIVE BOOKING ENGINE CALENDAR (MERGED)
            ========================================================================== */
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        .amenity-item i {
-            font-size: 3rem;
-            color: var(--primary-light);
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
+        .booking-engine-wrapper { background: var(--white); padding: 40px; box-shadow: var(--shadow-lg); border-radius: 8px; border-top: 5px solid var(--primary-dark); }
+        
+        .be-search-section { background: var(--bg-light); padding: 20px; margin-bottom: 30px; border-radius: 4px; border: 1px solid var(--border-color); }
+        .be-search-grid { display: flex; gap: 15px; align-items: flex-end; flex-wrap: wrap; }
+        .be-input-group { display: flex; flex-direction: column; gap: 5px; }
+        .be-input-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--primary-dark); }
+        .be-input-group input, .be-input-group select { padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.9rem; min-width: 150px; font-family: 'Poppins', sans-serif; }
+        .be-date-range { display: flex; align-items: center; border: 1px solid var(--border-color); border-radius: 4px; padding: 0 10px; background: var(--white); }
+        .be-date-range input { border: none; outline: none; padding: 10px 5px; background: transparent; }
+        
+        .be-table-container { margin-bottom: 30px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--border-color); }
+        .be-table { width: 100%; border-collapse: collapse; text-align: center; min-width: 900px; }
+        .be-table th, .be-table td { border: 1px solid var(--border-color); padding: 15px 10px; }
+        .be-table thead { background-color: var(--primary-dark); color: var(--white); }
+        .be-table thead th { font-size: 0.85rem; font-weight: 500; font-family: 'Poppins', sans-serif; }
+        .be-room-header { text-align: left; font-size: 1.2rem; padding-left: 20px; font-family: 'Playfair Display', serif; }
+        .be-room-header a { color: var(--accent-gold); font-size: 0.8rem; display: block; margin-top: 5px; font-family: 'Poppins', sans-serif; }
+        
+        .be-table tbody tr td:first-child { text-align: left; font-weight: 500; width: 250px; }
+        .be-plan-desc { font-size: 0.8rem; color: var(--accent-gold); display: flex; align-items: center; gap: 5px; margin-top: 5px; }
+        .be-price-cell { font-weight: 500; color: var(--primary-dark); }
+        .be-unavailable { color: #ccc; background-color: var(--bg-light); }
+        
+        .be-counter { display: inline-flex; align-items: center; border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; background: var(--white); }
+        .be-counter button { background: transparent; border: none; padding: 5px 12px; cursor: pointer; color: var(--primary-dark); font-size: 1.2rem; font-weight: bold; transition: 0.2s; }
+        .be-counter button:hover { background: var(--bg-light); color: var(--accent-gold); }
+        .be-counter span { padding: 0 10px; font-weight: bold; }
+
+        /* ==========================================================================
+           AMENITIES, EVENTS, FAQ, CONTACT & FOOTER
+           ========================================================================== */
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .amenity-item i { font-size: 3rem; color: var(--primary-light); margin-bottom: 20px; transition: var(--transition); }
         .amenity-item:hover i { color: var(--accent-gold); transform: scale(1.1); }
-        .amenity-item h3 { margin-bottom: 10px; }
-
-        /* ==========================================================================
-           WEDDINGS & EVENTS (PARALLAX)
-           ========================================================================== */
-        .events {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            color: var(--white);
-            text-align: center;
-        }
-        .events .section-title h2, .events .section-title p { color: var(--white); }
-        .events .section-title p { color: var(--accent-gold); }
-        .event-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
+        
+        .events { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed; color: var(--white); text-align: center; }
+        .events .section-title h2 { color: var(--white); }
+        .event-stats { display: flex; justify-content: center; gap: 50px; margin-top: 40px; flex-wrap: wrap; }
         .stat-box { border: 1px solid rgba(255,255,255,0.2); padding: 30px; min-width: 200px; backdrop-filter: blur(5px); }
-        .stat-box h4 { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px; }
-        .stat-box p { color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
-
-        /* ==========================================================================
-           FAQ ACCORDION
-           ========================================================================== */
+        .stat-box h4 { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        
         .faq { background-color: var(--bg-light); }
         .accordion { max-width: 800px; margin: 0 auto; }
         .accordion-item { background: var(--white); margin-bottom: 15px; box-shadow: var(--shadow-sm); }
-        .accordion-header {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-        .accordion-content {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            color: var(--text-muted);
-        }
+        .accordion-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--primary-dark); }
+        .accordion-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: var(--text-muted); }
         .accordion-item.active .accordion-content { padding: 0 20px 20px; max-height: 200px; }
         .accordion-item.active .accordion-header i { transform: rotate(180deg); color: var(--accent-gold); }
-
-        /* ==========================================================================
-           CONTACT & FOOTER
-           ========================================================================== */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            box-shadow: var(--shadow-lg);
-        }
+        
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; box-shadow: var(--shadow-lg); }
         .contact-info { background: var(--primary-dark); color: var(--white); padding: 60px; }
         .contact-info h3 { color: var(--accent-gold); font-size: 2rem; margin-bottom: 20px; }
         .info-list li { display: flex; align-items: center; margin-bottom: 25px; font-size: 1.1rem; }
         .info-list i { color: var(--accent-gold); font-size: 1.5rem; margin-right: 20px; width: 30px; text-align: center; }
-        
         .contact-form { background: var(--white); padding: 60px; }
         .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 15px;
-            border: 1px solid var(--border-color);
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-light);
-            outline: none;
-        }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-gold); }
-
+        .form-group input, .form-group textarea { width: 100%; padding: 15px; border: 1px solid var(--border-color); font-family: 'Poppins', sans-serif; background: var(--bg-light); outline: none; }
+        
         footer { background: #111; color: #888; padding: 60px 5% 20px; text-align: center; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
-        .footer-col h4 { color: var(--white); font-family: 'Poppins', sans-serif; margin-bottom: 20px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 20px; }
         .footer-col ul li { margin-bottom: 10px; }
         .footer-col ul li a:hover { color: var(--accent-gold); }
         .social-icons { display: flex; gap: 15px; margin-top: 20px; }
-        .social-icons a {
-            display: inline-flex; width: 40px; height: 40px;
-            background: #222; color: var(--white);
-            align-items: center; justify-content: center;
-            border-radius: 50%; transition: var(--transition);
-        }
+        .social-icons a { display: inline-flex; width: 40px; height: 40px; background: #222; color: var(--white); align-items: center; justify-content: center; border-radius: 50%; transition: var(--transition); }
         .social-icons a:hover { background: var(--accent-gold); }
 
-        /* ==========================================================================
-           RESPONSIVE DESIGN (MEDIA QUERIES)
-           ========================================================================== */
+        /* Responsive */
         @media (max-width: 992px) {
-            .booking-widget {
-                position: relative;
-                bottom: 0; width: 90%;
-                flex-direction: column;
-                margin-top: -50px;
-            }
+            .booking-widget-hero { position: relative; bottom: 0; width: 90%; flex-direction: column; margin-top: -50px; }
             .booking-input { border-right: none; border-bottom: 1px solid var(--border-color); padding: 15px 0; width: 100%; }
             .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 3.5rem; }
         }
-
         @media (max-width: 768px) {
-            nav ul {
-                position: absolute; top: 100%; left: 0; width: 100%;
-                background: var(--white);
-                flex-direction: column; align-items: center; gap: 0;
-                box-shadow: var(--shadow-sm);
-                max-height: 0; overflow: hidden;
-                transition: max-height 0.3s ease-in-out;
-            }
+            nav ul { position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); flex-direction: column; align-items: center; gap: 0; box-shadow: var(--shadow-sm); max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out; }
             nav ul.show { max-height: 400px; }
             nav ul li { width: 100%; text-align: center; border-bottom: 1px solid var(--border-color); }
             nav ul li a { display: block; padding: 15px; color: var(--primary-dark); }
@@ -421,57 +213,44 @@
 </head>
 <body>
 
-    <!-- HEADER & NAVIGATION -->
     <header id="header">
-        <a href="#" class="logo">
-            <i class="fa-solid fa-leaf" style="color: var(--accent-gold);"></i> Meadows
-        </a>
+        <a href="#" class="logo"><i class="fa-solid fa-leaf" style="color: var(--accent-gold);"></i> Meadows</a>
         <nav>
             <ul id="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#rooms">Accommodations</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#booking-section">Book Now</a></li>
                 <li><a href="#amenities">Wellness</a></li>
-                <li><a href="#events">Weddings & Events</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#events">Events</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>A Symphony of Nature & Luxury</h1>
             <p>Discover mindfulness, colonial architecture, and unparalleled serenity in the heart of Chhatrapati Sambhajinagar.</p>
-            <a href="#rooms" class="btn">Discover Rooms</a>
+            <a href="#booking-section" class="btn">Check Availability</a>
         </div>
 
-        <!-- FLOATING BOOKING WIDGET -->
-        <div class="booking-widget">
+        <div class="booking-widget-hero">
             <div class="booking-input">
                 <label>Check-in</label>
-                <input type="date" id="checkin">
+                <input type="date" id="checkin-quick">
             </div>
             <div class="booking-input">
                 <label>Check-out</label>
-                <input type="date" id="checkout">
+                <input type="date" id="checkout-quick">
             </div>
             <div class="booking-input">
                 <label>Guests</label>
-                <select>
-                    <option>1 Adult</option>
-                    <option>2 Adults</option>
-                    <option>2 Adults, 1 Child</option>
-                    <option>Family (4+)</option>
-                </select>
+                <select><option>2 Adults, 1 Room</option><option>Family (4+)</option></select>
             </div>
-            <button class="btn" style="width: 100%;" onclick="alert('Booking Engine Integration Required')">Check Availability</button>
+            <a href="#booking-section" class="btn" style="text-align: center; width: 100%;">Search Live Rates</a>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section class="section-padding container" id="about">
         <div class="about-grid">
             <div class="about-img">
@@ -482,14 +261,12 @@
                     <p>Welcome to Deogiri Valley</p>
                     <h2>Your Tropical Escape</h2>
                 </div>
-                <p>Nestled flawlessly between the vibrant city of Chhatrapati Sambhajinagar and the UNESCO global heritage sites of Ellora Caves and Daulatabad Fort, The Meadows Resort & Spa is a class apart.</p>
-                <p>Spread across sprawling botanical gardens, we champion sustainable tourism. Whether you seek a peaceful weekend retreat or a grand venue for celebrations, our upmarket property offers an enchanting atmosphere curated just for you.</p>
+                <p>Nestled perfectly between Chhatrapati Sambhajinagar and the global heritage sites of Ellora Caves, The Meadows Resort & Spa is a class apart. Spread across sprawling botanical gardens, we champion sustainable tourism.</p>
                 <a href="#contact" class="btn btn-outline" style="margin-top: 15px;">Get Directions</a>
             </div>
         </div>
     </section>
 
-    <!-- ROOMS SECTION -->
     <section class="section-padding rooms" id="rooms">
         <div class="container">
             <div class="section-title">
@@ -497,287 +274,237 @@
                 <h2>Our Accommodations</h2>
             </div>
             <div class="room-grid">
-                <!-- Room 1 -->
                 <div class="room-card">
                     <div class="room-img">
                         <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deluxe Cottage">
-                        <div class="room-price">₹5,500 / Night</div>
+                        <div class="room-price">From ₹4,200</div>
                     </div>
                     <div class="room-info">
-                        <h3>Superior Cottage</h3>
+                        <h3>Deluxe Room</h3>
                         <p>Arranged around water ponds with private patios, perfect for al-fresco dining amidst nature.</p>
                         <div class="room-amenities">
-                            <span><i class="fa-solid fa-wifi"></i> Free Wifi</span>
-                            <span><i class="fa-solid fa-mug-hot"></i> Coffee Maker</span>
-                            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+                            <span><i class="fa-solid fa-wifi"></i> Wifi</span>
+                            <span><i class="fa-solid fa-tv"></i> TV</span>
                         </div>
-                        <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">Book Cottage</a>
+                        <a href="#booking-section" class="btn btn-outline" style="width: 100%; text-align: center;">View Availability</a>
                     </div>
                 </div>
-                <!-- Room 2 -->
                 <div class="room-card">
                     <div class="room-img">
-                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Signature Suite">
-                        <div class="room-price">₹8,000 / Night</div>
+                        <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Signature Suite">
+                        <div class="room-price">From ₹13,500</div>
                     </div>
                     <div class="room-info">
-                        <h3>Lotus Luxury Suite</h3>
+                        <h3>Two Bedroom Suite</h3>
                         <p>Expansive living spaces, premium herbal toiletries, and unique landscaping outside your window.</p>
                         <div class="room-amenities">
                             <span><i class="fa-solid fa-bath"></i> Bathtub</span>
-                            <span><i class="fa-solid fa-wind"></i> AC</span>
-                            <span><i class="fa-solid fa-bed"></i> King Bed</span>
+                            <span><i class="fa-solid fa-bed"></i> 2 Kings</span>
                         </div>
-                        <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">Book Suite</a>
-                    </div>
-                </div>
-                <!-- Room 3 -->
-                <div class="room-card">
-                    <div class="room-img">
-                        <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Peacock Suite">
-                        <div class="room-price">₹10,500 / Night</div>
-                    </div>
-                    <div class="room-info">
-                        <h3>The Peacock Suite</h3>
-                        <p>Our most exclusive offering featuring colonial architecture, private garden access, and premium luxury.</p>
-                        <div class="room-amenities">
-                            <span><i class="fa-solid fa-concierge-bell"></i> Room Service</span>
-                            <span><i class="fa-solid fa-spa"></i> Jacuzzi</span>
-                            <span><i class="fa-solid fa-champagne-glasses"></i> Minibar</span>
-                        </div>
-                        <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">Book Suite</a>
+                        <a href="#booking-section" class="btn btn-outline" style="width: 100%; text-align: center;">View Availability</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AMENITIES SECTION -->
+    <section class="section-padding container" id="booking-section">
+        <div class="section-title">
+            <p>Live Inventory</p>
+            <h2>Reserve Your Stay</h2>
+        </div>
+        
+        <div class="booking-engine-wrapper">
+            <div class="be-search-section">
+                <div class="be-search-grid">
+                    <div class="be-input-group">
+                        <label>Check In - Check Out</label>
+                        <div class="be-date-range">
+                            <input type="text" value="26-06-2026">
+                            <span>→</span>
+                            <input type="text" value="27-06-2026">
+                        </div>
+                    </div>
+                    <div class="be-input-group">
+                        <label>Room & Guests</label>
+                        <input type="text" value="1 Room, 2 Adult, 1 Child" readonly style="background: var(--white);">
+                    </div>
+                    <div class="be-input-group">
+                        <label>Promocode</label>
+                        <input type="text" placeholder="Promo">
+                    </div>
+                    <button class="btn" style="padding: 11px 25px;">Search</button>
+                </div>
+                <div style="margin-top: 15px; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+                    <input type="checkbox" id="flex-dates" checked> <label for="flex-dates">Flexible Dates</label>
+                </div>
+            </div>
+
+            <div class="be-table-container">
+                <table class="be-table">
+                    <thead>
+                        <tr>
+                            <th class="be-room-header">Deluxe Room <a href="#">More Info ↗</a></th>
+                            <th>Fri<br>26 Jun</th><th>Sat<br>27 Jun</th><th>Sun<br>28 Jun</th><th>Mon<br>29 Jun</th>
+                            <th>Tue<br>30 Jun</th><th>Wed<br>1 Jul</th><th>Thu<br>2 Jul</th><th>Room(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Room Only <a href="#" class="be-plan-desc">More Info ↗ 2👤</a></td>
+                            <td class="be-unavailable">X</td><td class="be-unavailable">X</td><td class="be-unavailable">X</td>
+                            <td class="be-price-cell">4,200</td><td class="be-price-cell">4,200</td><td class="be-price-cell">4,200</td><td class="be-price-cell">4,500</td>
+                            <td>
+                                <div class="be-counter"><button onclick="updateCount(this, -1)">-</button><span>0</span><button onclick="updateCount(this, 1)">+</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast Included <a href="#" class="be-plan-desc">More Info ↗ 2👤</a></td>
+                            <td class="be-price-cell">5,500</td><td class="be-price-cell">5,500</td><td class="be-price-cell">5,500</td>
+                            <td class="be-price-cell">5,000</td><td class="be-price-cell">5,000</td><td class="be-price-cell">5,000</td><td class="be-price-cell">5,500</td>
+                            <td>
+                                <div class="be-counter"><button onclick="updateCount(this, -1)">-</button><span>0</span><button onclick="updateCount(this, 1)">+</button></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="be-table-container">
+                <table class="be-table">
+                    <thead>
+                        <tr>
+                            <th class="be-room-header">Two Bedrooms Suite <a href="#">More Info ↗</a></th>
+                            <th>Fri<br>26 Jun</th><th>Sat<br>27 Jun</th><th>Sun<br>28 Jun</th><th>Mon<br>29 Jun</th>
+                            <th>Tue<br>30 Jun</th><th>Wed<br>1 Jul</th><th>Thu<br>2 Jul</th><th>Room(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Room Only <a href="#" class="be-plan-desc">More Info ↗ 4👤</a></td>
+                            <td class="be-unavailable">X</td><td class="be-unavailable">X</td><td class="be-unavailable">X</td>
+                            <td class="be-price-cell">13.5k</td><td class="be-price-cell">13.5k</td><td class="be-price-cell">13.5k</td><td class="be-price-cell">16.5k</td>
+                            <td>
+                                <div class="be-counter"><button onclick="updateCount(this, -1)">-</button><span>0</span><button onclick="updateCount(this, 1)">+</button></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Breakfast Included <a href="#" class="be-plan-desc">More Info ↗ 4👤</a></td>
+                            <td class="be-price-cell">17.5k</td><td class="be-price-cell">17.5k</td><td class="be-price-cell">17.5k</td>
+                            <td class="be-price-cell">17k</td><td class="be-price-cell">17k</td><td class="be-price-cell">17k</td><td class="be-price-cell">17.5k</td>
+                            <td>
+                                <div class="be-counter"><button onclick="updateCount(this, -1)">-</button><span>0</span><button onclick="updateCount(this, 1)">+</button></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: right;">
+                <button class="btn" onclick="alert('Proceeding to secure checkout...')">Book Selected Rooms</button>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding container" id="amenities">
         <div class="section-title">
             <p>Rejuvenate</p>
             <h2>Wellness & Facilities</h2>
         </div>
         <div class="amenities-grid">
-            <div class="amenity-item">
-                <i class="fa-solid fa-person-swimming"></i>
-                <h3>Outdoor Pool</h3>
-                <p>Take a refreshing plunge surrounded by lush greenery.</p>
-            </div>
-            <div class="amenity-item">
-                <i class="fa-solid fa-spa"></i>
-                <h3>Spa & Sauna</h3>
-                <p>Professional massage treatments, steam rooms, and deep relaxation.</p>
-            </div>
-            <div class="amenity-item">
-                <i class="fa-solid fa-om"></i>
-                <h3>Mindfulness Yoga</h3>
-                <p>Start your day with morning yoga led by professional trainers.</p>
-            </div>
-            <div class="amenity-item">
-                <i class="fa-solid fa-utensils"></i>
-                <h3>Multi-Cuisine Dining</h3>
-                <p>Exquisite meals at our restaurant, coffee shop, and bar.</p>
-            </div>
+            <div class="amenity-item"><i class="fa-solid fa-person-swimming"></i><h3>Outdoor Pool</h3></div>
+            <div class="amenity-item"><i class="fa-solid fa-spa"></i><h3>Spa & Sauna</h3></div>
+            <div class="amenity-item"><i class="fa-solid fa-om"></i><h3>Mindfulness Yoga</h3></div>
+            <div class="amenity-item"><i class="fa-solid fa-utensils"></i><h3>Multi-Cuisine Dining</h3></div>
         </div>
     </section>
 
-    <!-- EVENTS PARALLAX SECTION -->
     <section class="section-padding events" id="events">
         <div class="container">
-            <div class="section-title">
-                <p>Celebrate With Us</p>
-                <h2>Weddings & Banquets</h2>
-            </div>
-            <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">With vast open spaces, The Ficus Lawn, and The Lotus Lawn, we provide the ultimate destination for grand weddings, intimate family gatherings, and flawless corporate conferences.</p>
-            
+            <div class="section-title"><p>Celebrate With Us</p><h2>Weddings & Banquets</h2></div>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">The Ficus Lawn, and The Lotus Lawn provide the ultimate destination for grand weddings and corporate conferences.</p>
             <div class="event-stats">
-                <div class="stat-box">
-                    <h4>3+</h4>
-                    <p>Grand Lawns</p>
-                </div>
-                <div class="stat-box">
-                    <h4>1000+</h4>
-                    <p>Guest Capacity</p>
-                </div>
-                <div class="stat-box">
-                    <h4>A/V</h4>
-                    <p>Conference Ready</p>
-                </div>
+                <div class="stat-box"><h4>3+</h4><p>Grand Lawns</p></div>
+                <div class="stat-box"><h4>1000+</h4><p>Guest Capacity</p></div>
             </div>
-            <br><br>
-            <a href="#contact" class="btn">Inquire for Events</a>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
     <section class="section-padding faq">
         <div class="container">
-            <div class="section-title">
-                <p>Got Questions?</p>
-                <h2>Frequently Asked Questions</h2>
-            </div>
+            <div class="section-title"><p>Got Questions?</p><h2>Frequently Asked Questions</h2></div>
             <div class="accordion">
                 <div class="accordion-item">
-                    <div class="accordion-header">
-                        How far are you from the airport and railway station?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p><br>We are conveniently located 16 km from Chikalthana Airport and 5.5 km from the Railway Station. We also offer pick-up and drop services upon request.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Do you provide Wi-Fi in the rooms?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p><br>Yes, complimentary high-speed Wi-Fi is available in all cottages, suites, and common areas of the resort.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        Are pets allowed at the resort?
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p><br>While we love animals, to maintain the tranquility and botanical integrity of our gardens, pets are currently not allowed on the property.</p>
-                    </div>
+                    <div class="accordion-header">How far are you from the airport? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="accordion-content"><p><br>We are located 16 km from Chikalthana Airport and offer pick-up services.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section class="section-padding container" id="contact">
-        <div class="section-title">
-            <p>Reach Out</p>
-            <h2>Contact & Location</h2>
-        </div>
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h3>Get in Touch</h3>
-                <p style="margin-bottom: 30px; color: #ccc;">Whether it's a room reservation, an event inquiry, or just a question about our amenities, we are here to help.</p>
-                <ul class="info-list">
-                    <li><i class="fa-solid fa-location-dot"></i> Gat no. 135 & 136, Ellora Road, Mitmita, Chhatrapati Sambhajinagar, Maharashtra 431002</li>
+                <ul class="info-list" style="margin-top: 30px;">
+                    <li><i class="fa-solid fa-location-dot"></i> Gat no. 135 & 136, Ellora Road, Mitmita, Chhatrapati Sambhajinagar</li>
                     <li><i class="fa-solid fa-phone"></i> +91 22 6654 8361</li>
-                    <li><i class="fa-solid fa-envelope"></i> reservations@themeadowsresort.com</li>
                 </ul>
             </div>
             <div class="contact-form">
-                <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject (e.g., Wedding Inquiry, Room Booking)">
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message..." required></textarea>
-                    </div>
+                <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                    <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                    <div class="form-group"><textarea rows="4" placeholder="Your Message" required></textarea></div>
                     <button type="submit" class="btn" style="width: 100%;">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-col">
-                <h2 style="color: var(--accent-gold); font-family: 'Playfair Display', serif; margin-bottom: 15px;">The Meadows</h2>
+                <h2 style="color: var(--accent-gold); font-family: 'Playfair Display', serif;">The Meadows</h2>
                 <p>A Perfect Oasis for Peace, Mindfulness, and Luxury.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#about">About Resort</a></li>
-                    <li><a href="#rooms">Rooms & Suites</a></li>
-                    <li><a href="#events">Weddings & Banquets</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Nearby Attractions</h4>
-                <ul>
-                    <li>Ellora Caves</li>
-                    <li>Daulatabad Fort</li>
-                    <li>Bibi Ka Maqbara</li>
-                    <li>Panchakki</li>
-                </ul>
+                <ul><li><a href="#about">About Resort</a></li><li><a href="#booking-section">Book Room</a></li></ul>
             </div>
         </div>
         <div style="border-top: 1px solid #333; padding-top: 20px; font-size: 0.9rem;">
-            &copy; 2026 Meadows Holidays and Resorts Pvt Ltd. All Rights Reserved. Designed for premium hospitality.
+            &copy; 2026 Meadows Holidays and Resorts Pvt Ltd. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- ==========================================================================
-         JAVASCRIPT
-         ========================================================================== -->
     <script>
-        // 1. Sticky Navigation Bar on Scroll
+        // Sticky Header & Mobile Menu
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
+        
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('show');
         });
 
-        // 2. Mobile Hamburger Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-
-        // Close mobile menu when a link is clicked
-        const navItems = document.querySelectorAll('#nav-links li a');
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('show');
-            });
-        });
-
-        // 3. Set Default Dates in Booking Widget (Today & Tomorrow)
-        const checkinInput = document.getElementById('checkin');
-        const checkoutInput = document.getElementById('checkout');
-        
-        let today = new Date();
-        let tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        
-        checkinInput.value = today.toISOString().split('T')[0];
-        checkoutInput.value = tomorrow.toISOString().split('T')[0];
-
-        // 4. FAQ Accordion Logic
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
+        // FAQ Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
-                // Close other open items
-                accordionItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                // Toggle current item
-                item.classList.toggle('active');
+                header.parentElement.classList.toggle('active');
             });
         });
+
+        // Default Dates for quick search
+        let today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin-quick').value = today;
+
+        // Counter Logic for the Booking Tables
+        function updateCount(btn, change) {
+            let span = btn.parentElement.querySelector('span');
+            let currentCount = parseInt(span.innerText);
+            let newCount = currentCount + change;
+            if (newCount >= 0) { span.innerText = newCount; }
+        }
     </script>
 </body>
 </html>
