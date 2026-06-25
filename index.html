@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Meadows Resort & Spa | Chhatrapati Sambhajinagar</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #2e4a31; /* Deep Forest Green */
+            --secondary-color: #f4f7f4; /* Light Mint/Off-white */
+            --accent-color: #c49a45; /* Gold/Earthy */
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 74, 49, 0.7), rgba(46, 74, 49, 0.7)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a88135;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 5%;
+        }
+
+        .footer-info {
+            margin-bottom: 20px;
+        }
+
+        /* Booking Modal (Hidden by default) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            background: #ccc;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">🌿 Meadows Resort & Spa</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="btn" onclick="openBooking()">Book Now</button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>A Perfect Oasis for Peace & Luxury</h1>
+        <p>Nestled in the heart of lush farms and mountains, experience sustainable tourism and colonial-style architecture in Chhatrapati Sambhajinagar.</p>
+        <button class="btn" onclick="openBooking()">Check Availability</button>
+    </section>
+
+    <!-- ROOMS SECTION -->
+    <section id="rooms">
+        <h2 class="section-title">Our Accommodations</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Deluxe & Superior Cottages</h3>
+                <p>Arranged beautifully around water ponds and lush greens. Features private patios, high-speed Wi-Fi, and al-fresco dining provisions.</p>
+            </div>
+            <div class="card">
+                <h3>Signature Luxury Suites</h3>
+                <p>Elevate your stay in our Peacock, English, Rustic, or Lotus Suites. Enjoy unique landscapes, premium herbal toiletries, and expansive living spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES SECTION -->
+    <section id="amenities" style="background-color: var(--secondary-color);">
+        <h2 class="section-title">Wellness & Amenities</h2>
+        <div class="grid">
+            <div class="card" style="background-color: var(--white);">
+                <h3>🏊 Outdoor Pool & Spa</h3>
+                <p>Plunge into our pool, or unwind with professional massage treatments, steam room, and sauna facilities.</p>
+            </div>
+            <div class="card" style="background-color: var(--white);">
+                <h3>🧘‍♀️ Mindfulness & Fitness</h3>
+                <p>Join morning yoga sessions led by a professional trainer or maintain your routine at our fitness center.</p>
+            </div>
+            <div class="card" style="background-color: var(--white);">
+                <h3>🍽️ Exceptional Dining</h3>
+                <p>Savor multi-cuisine meals, enjoy 24-hour room service, or relax at our lounge/bar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section id="events">
+        <h2 class="section-title">Weddings & Banquets</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>💍 Destination Weddings</h3>
+                <p>Host the wedding of your dreams on our stunning Ficus, Lotus, or Hibiscus Lawns with end-to-end banquet services.</p>
+            </div>
+            <div class="card">
+                <h3>💼 Conferences</h3>
+                <p>Equipped with high-speed Wi-Fi, projectors, and A/V equipment to ensure your corporate events run flawlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+        <div class="footer-info">
+            <h2>Contact Us</h2>
+            <p>📍 Gat no. 135 & 136, Ellora Road, Village, Mitmita, Chhatrapati Sambhajinagar, Maharashtra 431002</p>
+            <p>📞 +91 22 6654 8361 | 📧 reservations@themeadowsresort.com</p>
+        </div>
+        <p>&copy; 2026 Meadows Holidays and Resorts Pvt Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <!-- BOOKING MODAL (JavaScript Simulation) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--primary-color); margin-bottom: 15px;">Book Your Stay</h2>
+            <p>This would connect to your booking engine (like Razorpay, Stripe, or a Hotel Booking API).</p>
+            <p>Contact <b>+91 22 6654 8361</b> to book directly!</p>
+            <button class="btn close-btn" onclick="closeBooking()">Close</button>
+        </div>
+    </div>
+
+    <!-- --- JAVASCRIPT --- -->
+    <script>
+        function openBooking() {
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            let modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
