@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Admin | View Bookings</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: var(--secondary); color: white; }
+        tr:hover { background-color: #f5f5f5; }
+        .empty-msg { text-align: center; color: #888; padding: 40px; font-style: italic; }
+    </style>
+</head>
+<body style="background-color: #f0f2f5;">
+
+    <nav>
+        <div class="logo">Hotel A S Club - Admin</div>
+        <div class="nav-links">
+            <a href="index.html">Back to Website</a>
+        </div>
+    </nav>
+
+    <section style="padding-top: 120px;">
+        <div class="admin-container">
+            <h2 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px;">Current Reservations</h2>
+            
+            <button onclick="clearBookings()" style="padding: 8px 15px; background: red; color: white; border: none; border-radius: 4px; cursor: pointer; float: right; margin-bottom: 15px;">Clear All Data</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Guest Name</th>
+                        <th>Check-In</th>
+                        <th>Check-Out</th>
+                        <th>Total Price</th>
+                        <th>Booked On</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function loadBookings() {
+            const tableBody = document.getElementById('bookingTableBody');
+            tableBody.innerHTML = ''; // Clear table
+
+            // Get data from browser storage
+            const savedBookings = JSON.parse(localStorage.getItem('hotel_bookings')) || [];
+
+            if (savedBookings.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="empty-msg">No bookings found in local storage.</td></tr>';
+                return;
+            }
+
+            // Create a table row for each booking
+            savedBookings.forEach(booking => {
+                const row = `<tr>
+                    <td><strong>${booking.id}</strong></td>
+                    <td>${booking.name}</td>
+                    <td>${booking.checkIn}</td>
+                    <td>${booking.checkOut}</td>
+                    <td style="color: green; font-weight: bold;">${booking.total}</td>
+                    <td>${booking.dateBooked}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function clearBookings() {
+            if(confirm("Are you sure you want to delete all local bookings?")) {
+                localStorage.removeItem('hotel_bookings');
+                loadBookings();
+            }
+        }
+
+        // Run when page loads
+        loadBookings();
+    </script>
+
+</body>
+</html>
