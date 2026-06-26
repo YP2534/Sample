@@ -113,13 +113,31 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
    MOBILE RESPONSIVE DESIGN (FOR PHONES)
    ========================================= */
 
+/* Hamburger Icon - Hidden on Desktop */
+.menu-toggle { display: none; font-size: 2rem; color: var(--text-light); cursor: pointer; user-select: none; }
+
 @media screen and (max-width: 768px) {
-    /* Compress Navigation Menu */
-    nav { flex-direction: column; padding: 15px 5vw; }
-    .logo { margin-bottom: 15px; }
-    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-    .nav-links a { margin-left: 0; font-size: 0.75rem; }
-    .btn-unique { padding: 10px 20px; font-size: 0.75rem !important; margin-left: 0 !important; }
+    /* Compress Navigation Menu & Show Hamburger */
+    nav { flex-wrap: wrap; padding: 15px 5vw; }
+    .menu-toggle { display: block; } /* Show the ☰ icon */
+    
+    /* Hide the links by default on mobile */
+    .nav-links { 
+        display: none; 
+        width: 100%; 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 20px 0;
+        background: rgba(10, 17, 40, 0.98); 
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+    
+    /* This class is added by JavaScript when the hamburger is clicked */
+    .nav-links.active { display: flex; gap: 20px; }
+    
+    .nav-links a { margin-left: 0; font-size: 1rem; }
+    .btn-unique { padding: 12px 20px; font-size: 0.85rem !important; margin: 10px auto !important; width: fit-content; }
 
     /* Scale Down Hero Headings */
     .hero h1 { font-size: 3rem; }
@@ -132,28 +150,17 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
     .section-subtitle { margin-bottom: 40px; }
 
     /* Force Grids into a Single Column */
-    .rooms-grid, .amenities-grid { 
-        grid-template-columns: 1fr !important; 
-    }
-    
-    /* Fix Dining Section Text Padding */
+    .rooms-grid, .amenities-grid { grid-template-columns: 1fr !important; }
     .rooms-grid > div { padding: 0 15px !important; }
     .rooms-grid h3 { font-size: 1.6rem !important; }
 
     /* Compress the Contact Page Glass Panel */
-    .glass-panel {
-        grid-template-columns: 1fr !important;
-        padding: 30px !important;
-        margin-top: -30px !important;
-        gap: 30px !important;
-    }
+    .glass-panel { grid-template-columns: 1fr !important; padding: 30px !important; margin-top: -30px !important; gap: 30px !important; }
     .contact-info p { font-size: 0.95rem !important; flex-direction: column; }
     .contact-info strong { margin-bottom: 5px; }
 
     /* Compress Booking Page Container */
-    .booking-container {
-        grid-template-columns: 1fr !important;
-    }
+    .booking-container { grid-template-columns: 1fr !important; }
     
     /* Footer adjustments */
     footer { padding: 60px 5vw 30px; }
