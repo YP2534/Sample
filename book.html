@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel A S Club | Reserve Your Stay</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .booking-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 350px; gap: 40px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--secondary); }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+        .summary-card { background: #f9f9f9; padding: 30px; border-radius: 8px; border-top: 4px solid var(--primary); height: fit-content; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; color: #555; }
+        .summary-total { font-size: 1.5rem; font-weight: 700; color: var(--secondary); border-top: 2px solid #ddd; padding-top: 15px; margin-top: 15px; display: flex; justify-content: space-between; }
+        .error-msg { color: red; font-size: 0.9rem; display: none; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Hotel A S Club</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="banquets.html">Banquets</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="page-header" style="--bg-image: url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80'); height: 40vh;">
+        <h1>Secure Reservation</h1>
+    </header>
+
+    <section>
+        <div class="booking-container">
+            <form id="bookingForm">
+                <h2 style="margin-bottom: 30px; color: var(--secondary);">Guest Details</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label>Check-In Date</label>
+                        <input type="date" id="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-Out Date</label>
+                        <input type="date" id="checkOut" required>
+                        <div id="dateError" class="error-msg">Check-out must be after check-in.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Room Category</label>
+                    <select id="roomType" required>
+                        <option value="2500">Deluxe AC Room (₹2,500/night)</option>
+                        <option value="4500">Executive Suite (₹4,500/night)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Add-ons (Optional)</label>
+                    <div><input type="checkbox" id="addonBreakfast" value="350"> Premium Buffet Breakfast (₹350/person)</div>
+                    <div><input type="checkbox" id="addonPickup" value="1200"> Airport Pickup (₹1,200 flat)</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="guestName" placeholder="John Doe" required>
+                </div>
+            </form>
+
+            <div class="summary-card">
+                <h3 style="margin-bottom: 20px;">Live Estimate</h3>
+                <div class="summary-row"><span>Base Rate:</span> <span id="sumBase">₹0</span></div>
+                <div class="summary-row"><span>Nights:</span> <span id="sumNights">0</span></div>
+                <div class="summary-row"><span>Add-ons:</span> <span id="sumAddons">₹0</span></div>
+                <div class="summary-row"><span>Taxes (12%):</span> <span id="sumTax">₹0</span></div>
+                <div class="summary-total"><span>Total:</span> <span id="sumTotal">₹0</span></div>
+                <button type="button" class="btn" id="submitBtn" style="width: 100%; margin-top: 20px;">Confirm Booking</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById('bookingForm');
+        const checkIn = document.getElementById('checkIn');
+        const checkOut = document.getElementById('checkOut');
+        const roomType = document.getElementById('roomType');
+        const addonB = document.getElementById('addonBreakfast');
+        const addonP = document.getElementById('addonPickup');
+
+        function calculate() {
+            if(!checkIn.value || !checkOut.value) return;
+            
+            const d1 = new Date(checkIn.value);
+            const d2 = new Date(checkOut.value);
+            const nights = (d2 - d1) / (1000 * 60 * 60 * 24);
+
+            if(nights <= 0) {
+                document.getElementById('dateError').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('dateError').style.display = 'none';
+            }
+
+            const baseRate = parseInt(roomType.value);
+            const roomTotal = baseRate * nights;
+            
+            let addons = 0;
+            if(addonB.checked) addons += parseInt(addonB.value) * nights; // per night
+            if(addonP.checked) addons += parseInt(addonP.value); // flat fee
+
+            const subtotal = roomTotal + addons;
+            const tax = subtotal * 0.12;
+            const finalTotal = subtotal + tax;
+
+            document.getElementById('sumBase').innerText = '₹' + baseRate;
+            document.getElementById('sumNights').innerText = nights;
+            document.getElementById('sumAddons').innerText = '₹' + addons;
+            document.getElementById('sumTax').innerText = '₹' + tax.toFixed(0);
+            document.getElementById('sumTotal').innerText = '₹' + finalTotal.toFixed(0);
+        }
+
+        form.addEventListener('change', calculate);
+
+        // Send to Backend
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const data = {
+                name: document.getElementById('guestName').value,
+                checkIn: checkIn.value,
+                checkOut: checkOut.value,
+                total: document.getElementById('sumTotal').innerText
+            };
+            
+            try {
+                const response = await fetch('http://localhost:3000/api/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                alert(result.message);
+            } catch (err) {
+                alert("Server offline. Please run server.js");
+            }
+        });
+    </script>
+</body>
+</html>
