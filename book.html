@@ -25,6 +25,7 @@
             <a href="rooms.html">Rooms</a>
             <a href="banquets.html">Banquets</a>
             <a href="contact.html">Contact</a>
+            <a href="admin.html" style="color: #999; font-size: 0.8rem;">Admin</a>
         </div>
     </nav>
 
@@ -107,8 +108,8 @@
             const roomTotal = baseRate * nights;
             
             let addons = 0;
-            if(addonB.checked) addons += parseInt(addonB.value) * nights; // per night
-            if(addonP.checked) addons += parseInt(addonP.value); // flat fee
+            if(addonB.checked) addons += parseInt(addonB.value) * nights;
+            if(addonP.checked) addons += parseInt(addonP.value);
 
             const subtotal = roomTotal + addons;
             const tax = subtotal * 0.12;
@@ -123,26 +124,41 @@
 
         form.addEventListener('change', calculate);
 
-        // Send to Backend
-        document.getElementById('submitBtn').addEventListener('click', async () => {
-            const data = {
-                name: document.getElementById('guestName').value,
-                checkIn: checkIn.value,
-                checkOut: checkOut.value,
-                total: document.getElementById('sumTotal').innerText
-            };
-            
-            try {
-                const response = await fetch('http://localhost:3000/api/bookings', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                const result = await response.json();
-                alert(result.message);
-            } catch (err) {
-                alert("Server offline. Please run server.js");
+        // SAVE TO LOCAL STORAGE (Frontend Only)
+        document.getElementById('submitBtn').addEventListener('click', () => {
+            const name = document.getElementById('guestName').value;
+            const ci = checkIn.value;
+            const co = checkOut.value;
+            const total = document.getElementById('sumTotal').innerText;
+
+            if(!name || !ci || !co) {
+                alert("Please fill in your name and dates.");
+                return;
             }
+
+            // Create a booking object
+            const newBooking = {
+                id: 'ASC-' + Math.floor(Math.random() * 10000),
+                name: name,
+                checkIn: ci,
+                checkOut: co,
+                total: total,
+                dateBooked: new Date().toLocaleDateString()
+            };
+
+            // Get existing bookings from browser memory, or create an empty list
+            let savedBookings = JSON.parse(localStorage.getItem('hotel_bookings')) || [];
+            
+            // Add the new booking
+            savedBookings.push(newBooking);
+
+            // Save it back to the browser
+            localStorage.setItem('hotel_bookings', JSON.stringify(savedBookings));
+
+            alert(`Success! Booking Confirmed for ${name}.\nReservation ID: ${newBooking.id}\n\nYou can view this in the Admin dashboard.`);
+            
+            // Clear the form
+            document.getElementById('guestName').value = '';
         });
     </script>
 </body>
