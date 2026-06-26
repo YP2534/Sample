@@ -1,5 +1,6 @@
 /* =========================================
    HOTEL A S CLUB - ROYAL SAPPHIRE THEME
+   GLOBAL STYLESHEET
    ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap');
@@ -14,11 +15,26 @@
     --font-body: 'Lato', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); }
-body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: var(--font-body); 
+}
+
+body { 
+    background-color: var(--bg-dark); 
+    color: var(--text-light); 
+    line-height: 1.6; 
+    overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+}
 
 /* --- TYPOGRAPHY --- */
-h1, h2, h3, h4, .logo { font-family: var(--font-head); color: var(--text-light); font-weight: 600; }
+h1, h2, h3, h4, .logo { 
+    font-family: var(--font-head); 
+    color: var(--text-light); 
+    font-weight: 600; 
+}
 
 /* --- NAVIGATION --- */
 nav { 
@@ -34,7 +50,7 @@ nav {
     color: var(--text-light); text-decoration: none; margin-left: 35px; 
     font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; 
 }
-.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
 /* --- UNIQUE BUTTON DESIGN (Frosted Glass Pill) --- */
 .btn-unique { 
@@ -69,9 +85,9 @@ nav {
 
 .slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: brightness(0.9); }
-.slide:nth-child(1) { animation-delay: 1s; }
-.slide:nth-child(2) { animation-delay: 3s; }
-.slide:nth-child(3) { animation-delay: 5s; }
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
 
 @keyframes fadeSlides {
     0%   { opacity: 0; transform: scale(1); }
@@ -110,7 +126,7 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
 
 
 /* =========================================
-   MOBILE RESPONSIVE DESIGN (FOR PHONES)
+   MOBILE RESPONSIVE DESIGN (FOR PHONES & TABLETS)
    ========================================= */
 
 /* Hamburger Icon - Hidden on Desktop */
@@ -119,7 +135,7 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
 @media screen and (max-width: 768px) {
     /* Compress Navigation Menu & Show Hamburger */
     nav { flex-wrap: wrap; padding: 15px 5vw; }
-    .menu-toggle { display: block; } /* Show the ☰ icon */
+    .menu-toggle { display: block; } 
     
     /* Hide the links by default on mobile */
     .nav-links { 
@@ -131,9 +147,10 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
         background: rgba(10, 17, 40, 0.98); 
         border-radius: 8px;
         margin-top: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
     
-    /* This class is added by JavaScript when the hamburger is clicked */
+    /* This class is toggled by JavaScript */
     .nav-links.active { display: flex; gap: 20px; }
     
     .nav-links a { margin-left: 0; font-size: 1rem; }
@@ -146,22 +163,28 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
 
     /* Shrink Section Padding */
     section { padding: 60px 5vw; }
-    .section-title { font-size: 2.2rem; }
+    .section-title { font-size: 2.2rem; line-height: 1.2; margin-bottom: 10px; }
     .section-subtitle { margin-bottom: 40px; }
 
     /* Force Grids into a Single Column */
-    .rooms-grid, .amenities-grid { grid-template-columns: 1fr !important; }
-    .rooms-grid > div { padding: 0 15px !important; }
+    .rooms-grid, .amenities-grid { grid-template-columns: 1fr !important; gap: 30px; }
+    .rooms-grid > div { padding: 0 !important; }
     .rooms-grid h3 { font-size: 1.6rem !important; }
+    
+    /* Fix Dining Image Padding */
+    .rooms-grid img { margin-bottom: 20px; }
+    .rooms-grid div[style*="padding: 0 40px;"] { padding: 0 15px !important; text-align: center; }
 
     /* Compress the Contact Page Glass Panel */
-    .glass-panel { grid-template-columns: 1fr !important; padding: 30px !important; margin-top: -30px !important; gap: 30px !important; }
+    .glass-panel { 
+        grid-template-columns: 1fr !important; 
+        padding: 30px !important; 
+        margin-top: -30px !important; 
+        gap: 30px !important; 
+    }
     .contact-info p { font-size: 0.95rem !important; flex-direction: column; }
     .contact-info strong { margin-bottom: 5px; }
 
-    /* Compress Booking Page Container */
-    .booking-container { grid-template-columns: 1fr !important; }
-    
     /* Footer adjustments */
     footer { padding: 60px 5vw 30px; }
 }
