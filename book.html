@@ -6,6 +6,9 @@
     <title>Hotel A S Club | Reserve Your Stay</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Fix for mobile screen overflow */
+        body { overflow-x: hidden; }
+
         /* Specific Header for Booking Page */
         .page-header {
             height: 45vh;
@@ -22,6 +25,7 @@
             display: grid; 
             grid-template-columns: 1fr 400px; 
             gap: 50px; 
+            padding: 0 5vw;
         }
 
         /* Form Styling for Dark Theme */
@@ -39,7 +43,6 @@
             border-radius: 4px; transition: 0.3s;
         }
         
-        /* Dropdown options need a dark background so text is visible */
         .custom-form select option { background: var(--bg-dark); color: #fff; }
         
         .custom-form input:focus, .custom-form select:focus { 
@@ -70,9 +73,19 @@
         /* Map Section */
         .map-section { max-width: 1200px; margin: 80px auto 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
 
+        /* Success Animation Overlay */
+        #successOverlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 17, 40, 0.95); z-index: 9999;
+            flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: var(--text-light);
+        }
+        .success-icon { font-size: 5rem; color: var(--primary); margin-bottom: 20px; animation: popIn 0.6s ease; }
+        @keyframes popIn { 0% { transform: scale(0); } 80% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
         /* MOBILE RESPONSIVE UPDATES FOR THIS PAGE */
-        @media screen and (max-width: 768px) {
-            .booking-container { grid-template-columns: 1fr; gap: 40px; }
+        @media screen and (max-width: 900px) {
+            .booking-container { grid-template-columns: 1fr; gap: 40px; padding: 0 5vw; }
             .date-grid { grid-template-columns: 1fr !important; }
             .summary-card { padding: 30px; }
         }
@@ -80,7 +93,7 @@
 </head>
 <body>
 
-    <!-- Updated Navigation with Mobile Menu -->
+    <!-- Navigation with Mobile Menu -->
     <nav>
         <div class="logo">A S <span>Club</span></div>
         <div class="menu-toggle" id="mobile-menu">☰</div>
@@ -107,18 +120,18 @@
                 
                 <div class="date-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group">
-                        <label>Check-In Date</label>
+                        <label>Check-In Date *</label>
                         <input type="date" id="checkIn" required>
                     </div>
                     <div class="form-group">
-                        <label>Check-Out Date</label>
+                        <label>Check-Out Date *</label>
                         <input type="date" id="checkOut" required>
                         <div id="dateError" class="error-msg">Check-out must be after check-in.</div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Select Room Category</label>
+                    <label>Select Room Category *</label>
                     <select id="roomType" required>
                         <option value="2500">Deluxe AC Room (₹2,500/night)</option>
                         <option value="4500">Executive Suite (₹4,500/night)</option>
@@ -138,7 +151,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Full Name</label>
+                    <label>Full Name *</label>
                     <input type="text" id="guestName" placeholder="John Doe" required>
                 </div>
             </form>
@@ -156,7 +169,7 @@
             </div>
         </div>
 
-        <!-- Google Map Section (Added Below the Form) -->
+        <!-- Google Map Section (Below the Form) -->
         <div class="map-section">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.48375836904!2d75.26380187600742!3d19.85008488152148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9815a369bc63%3A0xe225daca139fe110!2sHotel%20A%20S%20Club!5e0!3m2!1sen!2sin!4v1708100000000!5m2!1sen!2sin" 
@@ -179,13 +192,33 @@
         <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
     </footer>
 
-    <!-- Scripts (Calculation, LocalStorage & Mobile Menu) -->
+    <!-- Success Overlay -->
+    <div id="successOverlay">
+        <div class="success-icon">✨</div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Booking Successful!</h2>
+        <p id="confirmMsg" style="font-size: 1.2rem; margin-bottom: 30px;"></p>
+        <button onclick="window.location.href='index.html'" class="btn-unique">Back to Home</button>
+    </div>
+
+    <!-- Scripts -->
     <script>
+        // Set default dates: Today and Tomorrow
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+
+        // Format dates as YYYY-MM-DD
+        const formatDate = (date) => date.toLocaleDateString('en-CA');
+
+        document.getElementById('checkIn').value = formatDate(today);
+        document.getElementById('checkOut').value = formatDate(tomorrow);
+
         // Form Elements
         const form = document.getElementById('bookingForm');
         const checkIn = document.getElementById('checkIn');
         const checkOut = document.getElementById('checkOut');
         const roomType = document.getElementById('roomType');
+        const guestName = document.getElementById('guestName');
         const addonB = document.getElementById('addonBreakfast');
         const addonP = document.getElementById('addonPickup');
 
@@ -223,42 +256,41 @@
         }
 
         form.addEventListener('change', calculate);
+        calculate(); // Run calculation on initial load so pricing isn't 0
 
-        // SAVE TO LOCAL STORAGE (Frontend Only)
+        // Handle Booking Submission
         document.getElementById('submitBtn').addEventListener('click', () => {
-            const name = document.getElementById('guestName').value;
-            const ci = checkIn.value;
-            const co = checkOut.value;
-            const total = document.getElementById('sumTotal').innerText;
-
-            if(!name || !ci || !co) {
-                alert("Please fill in your name and dates.");
+            // Validation for mandatory fields
+            if(!guestName.value || !checkIn.value || !checkOut.value || !roomType.value) {
+                alert("Please fill in your Name, Check-in/Check-out dates, and Room Category.");
                 return;
             }
 
-            // Create a booking object
+            const d1 = new Date(checkIn.value);
+            const d2 = new Date(checkOut.value);
+            if ((d2 - d1) <= 0) {
+                alert("Check-out date must be after check-in date.");
+                return;
+            }
+
+            // Create a booking object for Local Storage
             const newBooking = {
                 id: 'ASC-' + Math.floor(Math.random() * 10000),
-                name: name,
-                checkIn: ci,
-                checkOut: co,
-                total: total,
+                name: guestName.value,
+                checkIn: checkIn.value,
+                checkOut: checkOut.value,
+                total: document.getElementById('sumTotal').innerText,
                 dateBooked: new Date().toLocaleDateString()
             };
 
-            // Get existing bookings from browser memory, or create an empty list
+            // Save to browser memory
             let savedBookings = JSON.parse(localStorage.getItem('hotel_bookings')) || [];
-            
-            // Add the new booking
             savedBookings.push(newBooking);
-
-            // Save it back to the browser
             localStorage.setItem('hotel_bookings', JSON.stringify(savedBookings));
 
-            alert(`Success! Booking Confirmed for ${name}.\nReservation ID: ${newBooking.id}\n\nYou can view this in the Admin dashboard.`);
-            
-            // Clear the form
-            document.getElementById('guestName').value = '';
+            // Show Success Animation
+            document.getElementById('confirmMsg').innerText = `Thank you ${guestName.value}, your room is reserved!`;
+            document.getElementById('successOverlay').style.display = 'flex';
         });
 
         // Mobile Menu Toggle
