@@ -3,82 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel A S Club | Luxury Redefined</title>
-    <!-- Import Taj-style Luxury Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>A.S. CLUB | Premium Stay & Recreation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <div class="logo">A S Club</div>
+        <!-- The logo now perfectly mimics the neon outline from your photo -->
+        <div class="logo">A.S.CLUB</div>
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="rooms.html">Rooms</a>
+            <a href="#amenities">Amenities</a>
             <a href="banquets.html">Banquets</a>
             <a href="contact.html">Contact</a>
-            <a href="book.html" class="btn-gold">Reserve</a>
+            <a href="book.html" class="btn-red">Reserve</a>
         </div>
     </nav>
 
     <!-- Animated Cinematic Slideshow Hero -->
     <header class="hero">
         <div class="slideshow-container">
-            <!-- Image 1: Grand Hotel Pool & Exterior -->
+            <!-- Modern Resort & Nightlife imagery -->
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80');"></div>
-            <!-- Image 2: Luxury Executive Room -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1920&q=80');"></div>
-            <!-- Image 3: Elegant Banquet & Event Setup -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1920&q=80');"></div>
         </div>
         
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <h1>Iconic Luxury</h1>
-            <p>Discover an oasis of unparalleled elegance in the heart of Chhatrapati Sambhajinagar.</p>
-            <a href="book.html" class="btn-gold" style="font-size: 1.2rem; padding: 15px 40px;">Book Your Stay</a>
+            <h1>Experience The Club</h1>
+            <p>Premium accommodations, multi-cuisine dining, and elite recreation in MIDC Waluj.</p>
+            <a href="book.html" class="btn-red" style="font-size: 1rem; padding: 18px 45px; margin-top: 20px;">Book Your Stay</a>
         </div>
     </header>
 
-    <!-- 3D Interactive Features Section -->
-    <section class="features">
-        <h2 class="section-title">The A S Club Experience</h2>
-        <p style="font-size: 1rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 60px; text-align: center;">A Symphony of Comfort and Grandeur</p>
+    <!-- NEW: Recreation & Amenities Section (Based on Image Panels) -->
+    <section id="amenities">
+        <h2 class="section-title">Recreation & Wellness</h2>
+        <p class="section-subtitle">Exclusive Facilities For Our Guests</p>
 
-        <div class="rooms-grid" style="perspective: 1000px;">
-            <!-- 3D Card 1 -->
-            <div class="room-card" style="padding: 50px 30px; transform-style: preserve-3d; text-align: center;" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-                <h3 style="color: var(--primary); font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 15px; transform: translateZ(50px);">Royal Suites</h3>
-                <p style="transform: translateZ(30px);">52 meticulously crafted rooms featuring premium bedding, automated lighting, and bespoke art pieces tailored for the elite.</p>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">🎱</div>
+                <h4>Indoor Sports</h4>
+                <p>Challenge your friends to a game of professional Billiards or Table Tennis in our dedicated indoor gaming lounge.</p>
             </div>
-            
-            <!-- 3D Card 2 -->
-            <div class="room-card" style="padding: 50px 30px; transform-style: preserve-3d; text-align: center;" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-                <h3 style="color: var(--primary); font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 15px; transform: translateZ(50px);">Grand Venues</h3>
-                <p style="transform: translateZ(30px);">Three magnificent banquet halls and a sprawling open lawn capable of hosting weddings and summits of up to 1,800 guests.</p>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏊‍♂️</div>
+                <h4>Outdoor Pool</h4>
+                <p>Unwind in our massive crystal-clear outdoor swimming pool, complete with a relaxing attached Jacuzzi.</p>
             </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏋️</div>
+                <h4>Fitness Center</h4>
+                <p>Keep up with your routine in our fully-equipped modern gymnasium, featuring steam room access.</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏛️</div>
+                <h4>Local Heritage</h4>
+                <p>Perfectly located as your basecamp to explore the world-famous Ajanta and Ellora Caves.</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- 3D Card 3 -->
-            <div class="room-card" style="padding: 50px 30px; transform-style: preserve-3d; text-align: center;" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-                <h3 style="color: var(--primary); font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 15px; transform: translateZ(50px);">Bespoke Wellness</h3>
-                <p style="transform: translateZ(30px);">Rejuvenate in our crystal-clear outdoor jacuzzi pool, state-of-the-art fitness center, and private recreation lounges.</p>
+    <!-- NEW: Dining & Food Section -->
+    <section style="background: #0a0a0a;">
+        <h2 class="section-title">Culinary Excellence</h2>
+        <p class="section-subtitle">Multi-Cuisine Restaurant & Bar</p>
+        
+        <div class="rooms-grid" style="align-items: center; max-width: 1200px; margin: 0 auto;">
+            <div>
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Restaurant Bar" style="width: 100%; border-radius: 4px; border: 1px solid #333;">
             </div>
+            <div style="padding: 0 40px;">
+                <h3 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">Taste The Difference</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">Whether you are craving authentic local Maharashtrian spices, North Indian delicacies, or continental comfort food, our master chefs deliver an unforgettable dining experience.</p>
+                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.8;">Enjoy your meal in our sophisticated dining hall, or relax with premium spirits and handcrafted cocktails at our well-stocked bar.</p>
+                <a href="contact.html" class="btn-red">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Teaser -->
+    <section>
+        <h2 class="section-title">Luxury Accommodations</h2>
+        <p class="section-subtitle">52 Exquisite Rooms & Suites</p>
+
+        <div class="rooms-grid">
+            <div class="room-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+                <div class="room-info">
+                    <h3>Deluxe AC Room</h3>
+                    <p>Modern decor featuring high-speed Wi-Fi, flat-screen television, and 24/7 room service.</p>
+                </div>
+            </div>
+            <div class="room-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+                <div class="room-info">
+                    <h3>Executive Suite</h3>
+                    <p>Our premium offering with a private seating area, luxury bath amenities, and a mini-bar.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="rooms.html" class="btn-red">View All Rooms</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div style="font-family: var(--font-head); color: var(--primary); font-size: 2rem; margin-bottom: 20px;">A S Club</div>
-        <p style="color: #666; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, MIDC Waluj, Chhatrapati Sambhajinagar</p>
-        <p style="color: #444; font-size: 0.9rem;">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        <div class="footer-logo">A.S.CLUB</div>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
         
-        <!-- Secret Admin Link -->
-        <a href="admin.html" style="color: #333; text-decoration: none; font-size: 0.8rem; margin-top: 40px; display: inline-block;">Director Access</a>
+        <p class="copyright">&copy; 2026 Hotel A.S. Club. All Rights Reserved.</p>
+        <a href="admin.html" style="color: #333; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
     </footer>
 
-    <!-- Library that powers the 3D interaction -->
+    <!-- 3D Card Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
 </body>
