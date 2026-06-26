@@ -3,77 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel A S Club | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hotel A S Club | Luxury Redefined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
+        /* Taj Hotel Style Luxury Theme */
+        :root {
+            --primary: #d4af37; /* Taj Metallic Gold */
+            --bg-dark: #0f0f0f; /* Deep Charcoal */
+            --bg-light: #1a1a1a;
+            --text-light: #f5f5f5;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); }
+        body { background-color: var(--bg-dark); color: var(--text-light); }
+
+        /* Elegant Navigation */
+        nav { 
+            position: fixed; width: 100%; padding: 25px 5vw; display: flex; 
+            justify-content: space-between; align-items: center; 
+            background: rgba(15, 15, 15, 0.95); backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .logo { font-family: var(--font-head); font-size: 26px; font-weight: 700; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 35px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.4s; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-gold { padding: 10px 25px; border: 1px solid var(--primary); color: var(--primary) !important; transition: 0.4s; }
+        .btn-gold:hover { background: var(--primary); color: var(--bg-dark) !important; }
+
+        /* Cinematic Hero */
         .hero { 
             height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80') center/cover; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; }
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: -80px; position: relative; z-index: 10; padding: 0 10vw; }
-        .feature-box { background: white; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; }
-        .feature-box h3 { color: var(--primary); margin-bottom: 15px; }
+        .hero h1 { font-family: var(--font-head); font-size: 5.5rem; font-weight: 400; color: var(--primary); margin-bottom: 20px; letter-spacing: 2px; }
+        .hero p { font-size: 1.3rem; font-weight: 300; letter-spacing: 2px; color: #ddd; margin-bottom: 50px; max-width: 600px; }
+
+        /* 3D Features Section */
+        .features { padding: 100px 10vw; text-align: center; background: url('https://www.transparenttextures.com/patterns/stardust.png'); }
+        .section-title { font-family: var(--font-head); font-size: 3rem; color: var(--primary); margin-bottom: 20px; font-weight: 400; }
+        .section-subtitle { font-size: 1rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 60px; }
+
+        .cards-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; perspective: 1000px; }
+        
+        /* The 3D Card Design */
+        .card-3d { 
+            background: var(--bg-light); border: 1px solid #333; padding: 50px 30px; 
+            text-align: center; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transform-style: preserve-3d; /* Required for 3D */
+        }
+        .card-3d h3 { font-family: var(--font-head); font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; transform: translateZ(50px); }
+        .card-3d p { color: #aaa; line-height: 1.8; transform: translateZ(30px); }
+        
+        footer { background: #050505; padding: 60px 10vw 30px; text-align: center; border-top: 1px solid #222; }
+        .footer-logo { font-family: var(--font-head); color: var(--primary); font-size: 2rem; margin-bottom: 20px; }
+        .admin-link { color: #333; text-decoration: none; font-size: 0.8rem; margin-top: 40px; display: inline-block; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Hotel A S Club</div>
+        <div class="logo">A S Club</div>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
             <a href="banquets.html">Banquets</a>
             <a href="contact.html">Contact</a>
-            <a href="book.html" class="btn" style="padding: 8px 20px;">Book Now</a>
+            <a href="book.html" class="btn-gold">Reserve</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>Welcome to A S Club</h1>
-        <p>Premium luxury and unmatched hospitality in MIDC Waluj.</p>
-        <a href="book.html" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">Reserve Your Stay</a>
+        <h1>Iconic Luxury</h1>
+        <p>Discover an oasis of unparalleled elegance in the heart of Chhatrapati Sambhajinagar.</p>
+        <a href="book.html" class="btn-gold" style="font-size: 1.2rem; padding: 15px 40px;">Book Your Stay</a>
     </header>
 
-    <div class="features">
-        <div class="feature-box">
-            <h3>52 Luxury Rooms</h3>
-            <p>From Deluxe AC to Executive suites, designed for ultimate comfort.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Grand Banquets</h3>
-            <p>Three massive venues capable of hosting up to 1,800 guests.</p>
-        </div>
-        <div class="feature-box">
-            <h3>Premium Amenities</h3>
-            <p>Pool, Jacuzzi, multi-cuisine dining, and an exclusive indoor gym.</p>
-        </div>
-    </div>
+    <section class="features">
+        <h2 class="section-title">The A S Club Experience</h2>
+        <p class="section-subtitle">A Symphony of Comfort and Grandeur</p>
 
-    <section style="text-align: center; padding-bottom: 80px;">
-        <h2 class="section-title">Experience <span>Elegance</span></h2>
-        <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #555;">Located perfectly at the 6 km stone on Nagar Road near Chordia Petrol Pump, Hotel A S Club provides an exceptional retreat for both corporate travelers and families.</p>
-        <a href="rooms.html" class="btn" style="background: var(--secondary);">Explore Rooms</a>
+        <div class="cards-container">
+            <div class="card-3d" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <h3>Royal Suites</h3>
+                <p>52 meticulously crafted rooms featuring premium bedding, automated lighting, and bespoke art pieces tailored for the elite.</p>
+            </div>
+            
+            <div class="card-3d" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <h3>Grand Venues</h3>
+                <p>Three magnificent banquet halls and a sprawling open lawn capable of hosting weddings and summits of up to 1,800 guests.</p>
+            </div>
+
+            <div class="card-3d" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <h3>Bespoke Wellness</h3>
+                <p>Rejuvenate in our crystal-clear outdoor jacuzzi pool, state-of-the-art fitness center, and private recreation lounges.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>HOTEL A S Club</h4>
-                <p>6 K.M. Stone, Nagar Road, MIDC Waluj</p>
-                <p>Chhatrapati Sambhajinagar, Maharashtra 431136</p>
-            </div>
-            <div class="footer-col">
-                <h4>Reservations</h4>
-                <p>📞 +91 99210 55558</p>
-                <p>✉️ info@hotelASclub.com</p>
-            </div>
-        </div>
-        <div class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</div>
+        <div class="footer-logo">A S Club</div>
+        <p style="color: #666; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, MIDC Waluj, Chhatrapati Sambhajinagar</p>
+        <p style="color: #444; font-size: 0.9rem;">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        
+        <a href="admin.html" class="admin-link">Director Access</a>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 
 </body>
 </html>
