@@ -6,99 +6,117 @@
     <title>Hotel A S Club | Banquets & Events</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Banquet Specific Styles */
-        .events-intro { text-align: center; max-width: 800px; margin: 0 auto 60px; font-size: 1.1rem; color: #555; }
-        .banquet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .banquet-card { 
-            background: white; border-radius: 8px; overflow: hidden; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(10,17,40,0.7), rgba(10,17,40,0.9)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; justify-content: center; align-items: center; text-align: center;
+            padding-top: 80px; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .banquet-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .banquet-img { height: 250px; background-size: cover; background-position: center; }
-        .banquet-info { padding: 35px; text-align: center; }
-        .banquet-info h3 { font-size: 1.6rem; color: var(--secondary); margin-bottom: 10px; }
-        .capacity { display: inline-block; background: rgba(197, 168, 128, 0.1); color: var(--primary); padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
-        .banquet-info p { color: #666; margin-bottom: 25px; font-size: 0.95rem; }
+        .page-header h1 { font-size: 4rem; letter-spacing: 2px; color: var(--text-light); }
+        .capacity { display: inline-block; background: rgba(203, 163, 101, 0.1); color: var(--primary); padding: 8px 15px; border: 1px solid rgba(203, 163, 101, 0.3); border-radius: 50px; font-weight: bold; margin-bottom: 20px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+        .banquet-card { background: var(--bg-light); border-radius: 8px; transition: 0.4s; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+        .banquet-card:hover { border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.5); transform: translateY(-5px); }
+        .banquet-info { padding: 40px; text-align: center; }
+        .banquet-info h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--text-light); }
+        .banquet-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
         
-        /* Inquiry Banner */
-        .inquiry-banner { background: var(--secondary); color: white; text-align: center; padding: 60px 10vw; margin-top: 60px; }
-        .inquiry-banner h2 { font-size: 2rem; margin-bottom: 15px; color: var(--primary); }
-        .inquiry-banner p { margin-bottom: 30px; font-size: 1.1rem; color: #ccc; }
+        .inquiry-banner { background: rgba(255,255,255,0.03); padding: 80px 10vw; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
+    <!-- Updated Navigation -->
     <nav>
-        <div class="logo">Hotel A S Club</div>
+        <div class="logo">A S <span>Club</span></div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
-            <a href="banquets.html" class="active">Banquets</a>
+            <a href="banquets.html" class="active" style="color: var(--primary);">Banquets</a>
+            <a href="contact.html">Contact</a>
+            <a href="book.html" class="btn-unique" style="margin-left: 35px;">Reserve</a>
         </div>
     </nav>
 
-    <header class="page-header" style="--bg-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80');">
+    <!-- Page Header -->
+    <header class="page-header">
         <h1>Weddings & Events</h1>
     </header>
 
+    <!-- Expanded Banquets Section -->
     <section>
-        <h2 class="section-title">Celebrate With <span>Grandeur</span></h2>
-        <p class="events-intro">From intimate family ceremonies and corporate summits to massive dream weddings, Hotel A S Club offers versatile, elegant venues tailored to make your special moments unforgettable.</p>
+        <h2 class="section-title">Celebrate With Grandeur</h2>
+        <!-- FIXED: The introductory text is now highly visible -->
+        <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin: 0 auto 60px; text-align: center; line-height: 1.8;">
+            From intimate family ceremonies and corporate summits to massive dream weddings, Hotel A S Club offers versatile, elegant venues tailored to make your special moments unforgettable.
+        </p>
         
-        <div class="banquet-grid">
+        <div class="rooms-grid">
+            <!-- Venue 1 -->
             <div class="banquet-card">
-                <div class="banquet-img" style="background-image: url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80')"></div>
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="banquet-info">
-                    <h3>Hall 1</h3>
+                    <h3>Banquet Hall 1</h3>
                     <div class="capacity">👥 200 - 250 Guests</div>
                     <p>An elegant, fully air-conditioned banquet hall perfectly suited for corporate meetings, conferences, and intimate family ceremonies.</p>
-                    <a href="#inquire" class="btn">View Details</a>
                 </div>
             </div>
             
+            <!-- Venue 2 -->
             <div class="banquet-card">
-                <div class="banquet-img" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80')"></div>
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="banquet-info">
-                    <h3>Hall 2</h3>
+                    <h3>Banquet Hall 2</h3>
                     <div class="capacity">👥 250 - 300 Guests</div>
                     <p>A spacious and beautifully lit indoor venue designed for wedding receptions, mid-sized parties, and mid-scale corporate events.</p>
-                    <a href="#inquire" class="btn">View Details</a>
                 </div>
             </div>
 
+            <!-- Venue 3 -->
             <div class="banquet-card">
-                <div class="banquet-img" style="background-image: url('https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=800&q=80')"></div>
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="banquet-info">
                     <h3>The Grand Lawn</h3>
                     <div class="capacity">👥 Up to 1,800 Guests</div>
                     <p>A sprawling outdoor venue offering a magnificent open-sky canvas for spectacular grand weddings, exhibitions, and mega events.</p>
-                    <a href="#inquire" class="btn">View Details</a>
+                </div>
+            </div>
+
+            <!-- Venue 4 (NEW) -->
+            <div class="banquet-card">
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1577416412292-747c6607f055?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+                <div class="banquet-info">
+                    <h3>Executive Boardroom</h3>
+                    <div class="capacity">👥 15 - 30 Guests</div>
+                    <p>A sophisticated, soundproof meeting space equipped with modern presentation technology for high-level corporate negotiations.</p>
+                </div>
+            </div>
+
+            <!-- Venue 5 (NEW) -->
+            <div class="banquet-card">
+                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1530103862676-de8892bf30d9?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+                <div class="banquet-info">
+                    <h3>The Poolside Deck</h3>
+                    <div class="capacity">👥 50 - 100 Guests</div>
+                    <p>A breathtaking outdoor space adjacent to our crystal-clear pool, ideal for evening cocktail parties, birthdays, and social mixers.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="inquire" class="inquiry-banner">
-        <h2>Ready to Plan Your Event?</h2>
-        <p>Contact our event specialists to discuss catering options, decorations, and availability.</p>
-        <a href="mailto:info@hotelASclub.com" class="btn" style="background: white; color: var(--secondary);">Request a Quote</a>
+    <!-- FIXED: Call to Action Banner linking to Contact -->
+    <div class="inquiry-banner">
+        <h2 style="font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-light);">Ready to Plan Your Event?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Our expert event specialists are ready to help you with catering options, thematic decorations, and availability scheduling.</p>
+        <a href="contact.html" class="btn-unique" style="font-size: 1.1rem; padding: 16px 40px;">Contact Us</a>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>HOTEL A S Club</h4>
-                <p>6 K.M. Stone, Nagar Road, MIDC Waluj</p>
-                <p>Chhatrapati Sambhajinagar, Maharashtra</p>
-            </div>
-            <div class="footer-col">
-                <h4>Event Inquiries</h4>
-                <p>📞 +91 99210 55558</p>
-                <p>✉️ events@hotelASclub.com</p>
-            </div>
-        </div>
-        <div class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</div>
+        <div class="footer-logo">A S <span>Club</span></div>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
+        <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
     </footer>
 
 </body>
