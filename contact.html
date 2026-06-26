@@ -6,47 +6,130 @@
     <title>Hotel A S Club | Contact Us</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-        .contact-info h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.8rem; }
-        .contact-info p { margin-bottom: 15px; font-size: 1.1rem; }
-        .map-container iframe { width: 100%; height: 400px; border: none; border-radius: 8px; }
+        /* Specific Header for Contact Page */
+        .page-header {
+            height: 45vh;
+            background: linear-gradient(rgba(10,17,40,0.8), rgba(10,17,40,0.95)), url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; justify-content: center; align-items: center; text-align: center;
+            padding-top: 80px; 
+        }
+        .page-header h1 { font-size: 4rem; letter-spacing: 2px; color: var(--text-light); }
+
+        /* The "One Class" Unified Frosted Glass Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: -80px auto 0; /* Pulls the box up into the header slightly for a 3D effect */
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Contact Details Side */
+        .contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--primary); }
+        .contact-info p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px; display: flex; align-items: flex-start; }
+        .contact-info strong { color: var(--text-light); min-width: 100px; display: inline-block; }
+
+        /* Form Side */
+        .custom-form .form-group { margin-bottom: 25px; }
+        .custom-form label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .custom-form input, .custom-form textarea {
+            width: 100%; padding: 15px; background: rgba(0, 0, 0, 0.2); 
+            border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 1rem; 
+            border-radius: 4px; transition: 0.3s;
+        }
+        .custom-form input:focus, .custom-form textarea:focus {
+            outline: none; border-color: var(--primary); box-shadow: 0 0 10px rgba(203, 163, 101, 0.2);
+        }
+
+        /* Map Section */
+        .map-section { max-width: 1100px; margin: 80px auto 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <div class="logo">Hotel A S Club</div>
+        <div class="logo">A S <span>Club</span></div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
             <a href="banquets.html">Banquets</a>
-            <a href="book.html" class="btn" style="padding: 8px 20px;">Book Now</a>
+            <a href="contact.html" class="active" style="color: var(--primary);">Contact</a>
+            <a href="book.html" class="btn-unique" style="margin-left: 35px;">Reserve</a>
         </div>
     </nav>
 
-    <header class="page-header" style="--bg-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80');">
-        <h1>Get in Touch</h1>
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Get In Touch</h1>
     </header>
 
-    <section>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Our Location</h3>
-                <p>📍 <strong>Address:</strong> 6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump, MIDC Waluj, Chhatrapati Sambhajinagar, Maharashtra 431136</p>
-                <p>📞 <strong>Phone:</strong> +91 99210 55558</p>
-                <p>✉️ <strong>Email:</strong> info@hotelASclub.com</p>
-                
-                <h3 style="margin-top: 40px;">Send a Message</h3>
-                <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;">
-                <textarea placeholder="How can we help?" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; height: 100px;"></textarea>
-                <button class="btn">Send Message</button>
-            </div>
+    <!-- The Unified Contact Section -->
+    <section style="padding-top: 0;">
+        
+        <!-- The Glass Panel Wrapper -->
+        <div class="glass-panel">
             
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.686884699042!2d75.2536833!3d19.8529237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba28b122c7a21%3A0xc6fb0e071c667bc9!2sMIDC%20Waluj!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            <!-- Left Side: Information -->
+            <div class="contact-info">
+                <h3>We Are Here For You</h3>
+                <p style="margin-bottom: 40px;">Whether you are planning a grand wedding, a corporate retreat, or a quiet weekend getaway, our team is ready to assist you with every detail.</p>
+                
+                <p><strong>📍 Address:</strong> <span>6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump, MIDC Waluj, Chhatrapati Sambhajinagar, Maharashtra 431136</span></p>
+                <p><strong>📞 Phone:</strong> <span>+91 98765 43210<br>+91 87654 32109</span></p>
+                <p><strong>✉️ Email:</strong> <span>reservations@asclub.com<br>events@asclub.com</span></p>
             </div>
+
+            <!-- Right Side: Contact Form -->
+            <form class="custom-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>How can we help?</label>
+                    <textarea rows="4" placeholder="Tell us about your inquiry..." required></textarea>
+                </div>
+                <button type="button" class="btn-unique" style="width: 100%; text-align: center; border-radius: 4px;">Send Message</button>
+            </form>
+            
         </div>
+
+        <!-- Google Map Embedded -->
+        <div class="map-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.48375836904!2d75.26380187600742!3d19.85008488152148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9815a369bc63%3A0xe225daca139fe110!2sHotel%20A%20S%20Club!5e0!3m2!1sen!2sin!4v1708100000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style="border:0; filter: grayscale(80%) contrast(1.2); display: block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">A S <span>Club</span></div>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
+        <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
+    </footer>
 
 </body>
 </html>
