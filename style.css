@@ -1,68 +1,77 @@
 /* =========================================
-   HOTEL A.S. CLUB - MIDNIGHT RED THEME
+   HOTEL A S CLUB - ROYAL SAPPHIRE THEME
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap');
 
 :root {
-    --primary: #ff0033; /* A.S. Club Neon Red */
-    --primary-glow: rgba(255, 0, 51, 0.4);
-    --bg-dark: #050505; /* Pitch Black */
-    --bg-light: #111111; /* Dark Grey Panels */
-    --text-light: #ffffff; /* Pure White */
-    --text-muted: #999999;
-    --font-head: 'Montserrat', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
+    --primary: #cba365; /* Champagne Gold */
+    --bg-dark: #0a1128; /* Deep Royal Sapphire Blue */
+    --bg-light: #121c3b; /* Lighter Sapphire for Cards */
+    --text-light: #f8f9fa; /* Crisp White */
+    --text-muted: #a0aabf; /* Soft Blue-Grey */
+    --font-head: 'Cinzel', serif; /* Elegant Hotel Font */
+    --font-body: 'Lato', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); }
 body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
 
 /* --- TYPOGRAPHY --- */
-h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+h1, h2, h3, h4, .logo { font-family: var(--font-head); color: var(--text-light); font-weight: 600; }
 
-/* --- NAVIGATION & NEON LOGO --- */
+/* --- NAVIGATION --- */
 nav { 
     position: fixed; top: 0; width: 100%; padding: 25px 5vw; 
     display: flex; justify-content: space-between; align-items: center; 
-    background: rgba(5, 5, 5, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px); z-index: 1000;
+    background: rgba(10, 17, 40, 0.85); backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000;
 }
-
-/* Custom CSS to mimic the physical glowing red outline sign */
-.logo { 
-    font-family: var(--font-head); font-size: 32px; font-weight: 900; letter-spacing: 5px; 
-    color: transparent; 
-    -webkit-text-stroke: 1.5px var(--primary); 
-    text-shadow: 0px 0px 15px var(--primary-glow);
-}
+.logo { font-size: 28px; letter-spacing: 4px; text-transform: uppercase; }
+.logo span { color: var(--primary); }
 
 .nav-links a { 
     color: var(--text-light); text-decoration: none; margin-left: 35px; 
-    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; 
 }
-.nav-links a:hover, .nav-links a.active { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
+.nav-links a:hover { color: var(--primary); }
 
-/* --- BUTTONS --- */
-.btn-red { 
-    padding: 12px 35px; background: transparent; border: 2px solid var(--primary); 
-    color: var(--primary); text-decoration: none; text-transform: uppercase; font-family: var(--font-head);
-    letter-spacing: 2px; font-size: 0.85rem; font-weight: 700; transition: 0.4s; cursor: pointer; display: inline-block;
-    box-shadow: 0 0 10px transparent;
+/* --- UNIQUE BUTTON DESIGN (Frosted Glass Pill) --- */
+.btn-unique { 
+    position: relative; padding: 14px 35px; 
+    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; /* Pill Shape */
+    color: #fff !important; text-decoration: none; text-transform: uppercase; 
+    letter-spacing: 2px; font-size: 0.85rem; overflow: hidden; transition: all 0.4s ease; 
+    display: inline-block; z-index: 1; cursor: pointer;
 }
-.btn-red:hover { 
-    background: var(--primary); color: #fff; box-shadow: 0 0 20px var(--primary-glow); 
+/* The Shimmer Effect */
+.btn-unique::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: all 0.6s ease; z-index: -1; transform: skewX(-20deg);
+}
+.btn-unique:hover::before { left: 150%; }
+.btn-unique:hover { 
+    background: #fff; color: var(--bg-dark) !important; border-color: #fff; 
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); font-weight: bold;
 }
 
 /* --- CINEMATIC SLIDESHOW HERO --- */
 .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.4), rgba(5,5,5,1)); z-index: 1; }
-.hero-content { position: relative; z-index: 2; margin-top: 50px; }
-.hero h1 { font-size: 4.5rem; color: #fff; margin-bottom: 20px; letter-spacing: 5px; }
-.hero p { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(10,17,40,0.5), rgba(10,17,40,0.9)); z-index: 1; }
 
+/* Perfectly Centered Hero Text */
+.hero-content { 
+    position: relative; z-index: 2; display: flex; flex-direction: column; 
+    align-items: center; justify-content: center; text-align: center; width: 100%;
+}
+.hero h1 { font-size: 5rem; color: var(--text-light); margin-bottom: 20px; letter-spacing: 4px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; text-transform: uppercase; }
+
+/* The Slideshow Animation */
 .slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: contrast(1.1) brightness(0.8); }
+.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: brightness(0.9); }
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 5s; }
 .slide:nth-child(3) { animation-delay: 10s; }
@@ -76,27 +85,28 @@ nav {
 }
 
 /* --- SECTIONS --- */
-section { padding: 100px 10vw; border-bottom: 1px solid #1a1a1a; }
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #fff; }
-.section-subtitle { text-align: center; font-size: 0.9rem; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; margin-bottom: 70px; font-weight: 700; }
+section { padding: 100px 10vw; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.section-title { text-align: center; font-size: 2.8rem; margin-bottom: 15px; color: var(--text-light); }
+.section-subtitle { text-align: center; font-size: 0.9rem; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; margin-bottom: 70px; }
 
 /* --- AMENITIES & FOOD GRIDS --- */
 .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.amenity-card { background: var(--bg-light); padding: 40px 30px; text-align: center; border-radius: 4px; transition: 0.3s; border-bottom: 3px solid transparent; }
-.amenity-card:hover { transform: translateY(-10px); border-bottom: 3px solid var(--primary); background: #151515; }
+.amenity-card { background: var(--bg-light); padding: 40px 30px; text-align: center; border-radius: 8px; transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
+.amenity-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
 .amenity-icon { font-size: 3rem; margin-bottom: 20px; }
-.amenity-card h4 { font-size: 1.2rem; margin-bottom: 15px; }
-.amenity-card p { color: var(--text-muted); font-size: 0.9rem; }
+.amenity-card h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary); }
+.amenity-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-/* --- ROOMS & BANQUETS --- */
+/* --- ROOMS --- */
 .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-.room-card { background: var(--bg-light); transition: 0.4s; overflow: hidden; border: 1px solid #222; }
-.room-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+.room-card { background: var(--bg-light); border-radius: 8px; transition: 0.4s; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+.room-card:hover { border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
 .room-info { padding: 40px; text-align: center; }
-.room-info h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+.room-info h3 { font-size: 1.6rem; margin-bottom: 15px; }
 .room-info p { color: var(--text-muted); font-size: 0.95rem; }
 
 /* --- FOOTER --- */
-footer { background: #000; padding: 80px 10vw 40px; text-align: center; }
-.footer-logo { font-family: var(--font-head); color: transparent; -webkit-text-stroke: 1px var(--primary); font-size: 2rem; margin-bottom: 20px; letter-spacing: 5px; font-weight: 900; }
-.copyright { font-size: 0.85rem; color: #555; margin-top: 40px; }
+footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
+.footer-logo { font-family: var(--font-head); color: var(--text-light); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 4px; }
+.footer-logo span { color: var(--primary); }
+.copyright { font-size: 0.85rem; color: #666; margin-top: 40px; }
