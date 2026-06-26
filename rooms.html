@@ -17,10 +17,12 @@
 </head>
 <body>
 
-    <!-- Updated Navigation -->
     <nav>
         <div class="logo">A S <span>Club</span></div>
-        <div class="nav-links">
+        
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        
+        <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="rooms.html" class="active" style="color: var(--primary);">Rooms</a>
             <a href="banquets.html">Banquets</a>
@@ -29,18 +31,15 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <h1>Stay With Us</h1>
     </header>
 
-    <!-- Expanded Rooms Section -->
     <section>
         <h2 class="section-title">Our Accommodations</h2>
         <p class="section-subtitle">Comfort Meets Elegance</p>
         
         <div class="rooms-grid">
-            <!-- Room 1 -->
             <div class="room-card">
                 <div style="height: 300px; background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
@@ -55,7 +54,6 @@
                 </div>
             </div>
             
-            <!-- Room 2 -->
             <div class="room-card">
                 <div style="height: 300px; background: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
@@ -70,7 +68,6 @@
                 </div>
             </div>
 
-            <!-- Room 3 (NEW) -->
             <div class="room-card">
                 <div style="height: 300px; background: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
@@ -85,7 +82,6 @@
                 </div>
             </div>
 
-            <!-- Room 4 (NEW) -->
             <div class="room-card">
                 <div style="height: 300px; background: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
@@ -102,7 +98,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-logo">A S <span>Club</span></div>
         <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
@@ -110,6 +105,17 @@
         <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
         <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
     </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 
 </body>
 </html>
