@@ -1,54 +1,128 @@
-/* style.css */
+/* =========================================
+   HOTEL A S CLUB - LUXURY THEME (GLOBAL CSS)
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
 :root {
-    --primary: #c5a880; /* Elegant Gold */
-    --secondary: #1a1a1a; /* Charcoal */
-    --text-light: #f5f5f5;
-    --text-dark: #333;
-    --font-main: 'Segoe UI', system-ui, sans-serif;
+    --primary: #d4af37; /* Taj Metallic Gold */
+    --bg-dark: #0f0f0f; /* Deep Charcoal */
+    --bg-light: #1a1a1a; /* Card Background */
+    --text-light: #f5f5f5; /* Main Text */
+    --text-muted: #aaaaaa; /* Subtext */
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
-body { color: var(--text-dark); line-height: 1.6; background-color: #fff; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: var(--font-body); 
+}
 
-/* Global Navigation */
+body { 
+    background-color: var(--bg-dark); 
+    color: var(--text-light); 
+    line-height: 1.6; 
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4, .logo { 
+    font-family: var(--font-head); 
+    color: var(--primary); 
+    font-weight: 400;
+}
+
+/* --- NAVIGATION --- */
 nav { 
-    position: fixed; width: 100%; padding: 20px 5vw; display: flex; 
-    justify-content: space-between; align-items: center; 
-    background: rgba(26, 26, 26, 0.98); color: white; z-index: 1000; 
-    border-bottom: 2px solid var(--primary);
+    position: fixed; top: 0; width: 100%; padding: 25px 5vw; 
+    display: flex; justify-content: space-between; align-items: center; 
+    background: rgba(15, 15, 15, 0.98); border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 1000;
 }
-.logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--primary); text-transform: uppercase; }
+.logo { font-size: 26px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
 .nav-links a { 
-    color: white; text-decoration: none; margin-left: 30px; 
-    font-weight: 500; transition: color 0.3s; 
+    color: #fff; text-decoration: none; margin-left: 35px; 
+    font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: 0.4s; 
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-/* Global Button */
-.btn { 
-    padding: 12px 30px; background: var(--primary); color: #fff; 
-    text-decoration: none; font-weight: 600; border-radius: 4px; 
-    display: inline-block; transition: 0.3s; border: none; cursor: pointer;
+/* --- BUTTONS --- */
+.btn, .btn-gold { 
+    padding: 12px 30px; background: transparent; border: 1px solid var(--primary); 
+    color: var(--primary); text-decoration: none; text-transform: uppercase; 
+    letter-spacing: 1px; font-size: 0.9rem; transition: 0.4s; cursor: pointer; display: inline-block;
 }
-.btn:hover { background: #b09570; transform: translateY(-2px); }
+.btn:hover, .btn-gold:hover { 
+    background: var(--primary); color: var(--bg-dark); 
+}
 
-/* Page Headers (For subpages) */
+/* --- SUBPAGE HEADERS --- */
 .page-header {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) center/cover;
-    display: flex; justify-content: center; align-items: center; text-align: center; color: white;
-    padding-top: 80px;
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), var(--bg-image) center/cover;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+    padding-top: 80px; border-bottom: 2px solid var(--primary);
 }
-.page-header h1 { font-size: 3.5rem; letter-spacing: 1px; }
+.page-header h1 { font-size: 4rem; letter-spacing: 2px; }
 
-/* Sections */
+/* --- SECTIONS --- */
 section { padding: 100px 10vw; }
-.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--secondary); }
-.section-title span { color: var(--primary); font-weight: 600; }
+.section-title { text-align: center; font-size: 3rem; margin-bottom: 60px; letter-spacing: 1px; }
+.section-title span { color: #fff; font-style: italic; }
 
-/* Global Footer */
-footer { background: #0a0a0a; color: white; padding: 60px 10vw 30px; text-align: center; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; margin-bottom: 30px; }
-.footer-col h4 { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; }
-.footer-col p { color: #999; margin-bottom: 10px; font-size: 0.95rem; }
-.copyright { color: #666; font-size: 0.9rem; padding-top: 30px; border-top: 1px solid #333; }
+/* --- ROOMS & BANQUETS GRIDS --- */
+.rooms-grid, .banquet-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; 
+}
+.room-card, .banquet-card { 
+    background: var(--bg-light); border: 1px solid #333; transition: 0.4s; 
+}
+.room-card:hover, .banquet-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.room-img, .banquet-img { height: 300px; background-size: cover; background-position: center; border-bottom: 1px solid #333; }
+.room-info, .banquet-info { padding: 40px; text-align: center; }
+.room-info h3, .banquet-info h3 { font-size: 2rem; margin-bottom: 15px; }
+.amenity-list { margin: 20px 0; color: var(--text-muted); text-align: left; list-style-position: inside; }
+.capacity { display: inline-block; background: rgba(212, 175, 55, 0.1); color: var(--primary); padding: 8px 15px; border-radius: 0px; font-weight: bold; border: 1px solid rgba(212, 175, 55, 0.3); margin-bottom: 20px; }
+.room-info p, .banquet-info p { color: var(--text-muted); }
+
+/* --- FORMS (BOOKING & CONTACT) --- */
+.booking-container, .contact-grid { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; 
+}
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--primary); letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase; }
+input, select, textarea { 
+    width: 100%; padding: 15px; background: #222; border: 1px solid #444; 
+    color: #fff; font-size: 1rem; transition: 0.3s; 
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); }
+
+/* Custom Checkbox Alignment */
+.form-group div { color: var(--text-muted); margin-bottom: 10px; display: flex; align-items: center; }
+.form-group input[type="checkbox"] { width: auto; margin-right: 15px; cursor: pointer; }
+
+/* --- SUMMARY CARD (BOOKING PAGE) --- */
+.summary-card { 
+    background: var(--bg-light); padding: 40px; border: 1px solid var(--primary); height: fit-content; 
+}
+.summary-card h3 { font-size: 1.8rem; margin-bottom: 25px; text-align: center; border-bottom: 1px solid #333; padding-bottom: 15px; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; color: var(--text-muted); }
+.summary-total { 
+    font-family: var(--font-head); font-size: 1.8rem; color: var(--primary); 
+    border-top: 1px solid #444; padding-top: 20px; margin-top: 20px; display: flex; justify-content: space-between; 
+}
+.error-msg { color: #e74c3c; font-size: 0.9rem; display: none; margin-top: 5px; }
+
+/* --- CONTACT MAP --- */
+.contact-info p { color: var(--text-muted); margin-bottom: 15px; font-size: 1.1rem; }
+.contact-info strong { color: #fff; }
+.map-container iframe { width: 100%; height: 100%; min-height: 400px; border: 1px solid #333; filter: grayscale(80%) contrast(1.2); }
+
+/* --- FOOTER --- */
+footer { background: #050505; color: var(--text-muted); padding: 60px 10vw 30px; text-align: center; border-top: 1px solid #222; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
+.footer-col h4 { margin-bottom: 20px; font-size: 1.2rem; }
+.footer-col p { margin-bottom: 10px; font-size: 0.95rem; }
+.copyright { font-size: 0.9rem; padding-top: 30px; border-top: 1px solid #222; }
