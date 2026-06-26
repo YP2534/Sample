@@ -11,7 +11,12 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">A S <span>Club</span></div>
-        <div class="nav-links">
+        
+        <!-- The Hamburger Icon (Visible only on mobile) -->
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        
+        <!-- Added id="nav-links" for the script to target -->
+        <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
             <a href="#amenities">Amenities</a>
@@ -127,6 +132,18 @@
 
     <!-- 3D Card Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 
 </body>
 </html>
