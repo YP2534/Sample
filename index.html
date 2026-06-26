@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel A S Club | Rooms & Suites</title>
+    <title>Hotel A S Club | Home</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .room-card { background: #f9f9f9; border-radius: 8px; overflow: hidden; }
-        .room-img { height: 300px; background-size: cover; background-position: center; }
-        .room-info { padding: 40px; }
-        .room-info h3 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 15px; }
-        .amenity-list { margin: 20px 0; color: #666; font-size: 0.95rem; }
-        .amenity-list li { margin-bottom: 8px; margin-left: 20px; }
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80') center/cover; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white;
+        }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 700px; }
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: -80px; position: relative; z-index: 10; padding: 0 10vw; }
+        .feature-box { background: white; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; }
+        .feature-box h3 { color: var(--primary); margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -20,48 +24,32 @@
     <nav>
         <div class="logo">Hotel A S Club</div>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="rooms.html" class="active">Rooms</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="rooms.html">Rooms</a>
             <a href="banquets.html">Banquets</a>
         </div>
     </nav>
 
-    <header class="page-header" style="--bg-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1920&q=80');">
-        <h1>Stay With Us</h1>
+    <header class="hero">
+        <h1>Welcome to A S Club</h1>
+        <p>Premium luxury and unmatched hospitality in MIDC Waluj.</p>
+        <a href="rooms.html" class="btn">Explore Accommodations</a>
     </header>
 
-    <section>
-        <h2 class="section-title">Our <span>Accommodations</span></h2>
-        <div class="rooms-grid">
-            <div class="room-card">
-                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="room-info">
-                    <h3>Deluxe AC Room</h3>
-                    <p>Perfect for business travelers and short stays. Modern decor with everything you need.</p>
-                    <ul class="amenity-list">
-                        <li>Free High-Speed Wi-Fi</li>
-                        <li>Flat-screen Television</li>
-                        <li>Room Service</li>
-                    </ul>
-                    <a href="#" class="btn">Check Availability</a>
-                </div>
-            </div>
-            
-            <div class="room-card">
-                <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80')"></div>
-                <div class="room-info">
-                    <h3>Executive Suite</h3>
-                    <p>Our premium 180 sq.ft offering. Features premium bedding and a dedicated seating area.</p>
-                    <ul class="amenity-list">
-                        <li>Complimentary Breakfast</li>
-                        <li>Mini-bar & Coffee Maker</li>
-                        <li>Luxury Bath Amenities</li>
-                    </ul>
-                    <a href="#" class="btn">Check Availability</a>
-                </div>
-            </div>
+    <div class="features">
+        <div class="feature-box">
+            <h3>52 Luxury Rooms</h3>
+            <p>From Deluxe AC to Executive suites, designed for ultimate comfort.</p>
         </div>
-    </section>
+        <div class="feature-box">
+            <h3>Grand Banquets</h3>
+            <p>Three massive venues capable of hosting up to 1,800 guests.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Premium Amenities</h3>
+            <p>Pool, Jacuzzi, multi-cuisine dining, and an exclusive indoor gym.</p>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-grid">
@@ -69,6 +57,11 @@
                 <h4>HOTEL A S Club</h4>
                 <p>6 K.M. Stone, Nagar Road, MIDC Waluj</p>
                 <p>Chhatrapati Sambhajinagar, Maharashtra</p>
+            </div>
+            <div class="footer-col">
+                <h4>Reservations</h4>
+                <p>📞 +91 99210 55558</p>
+                <p>Check-in: 12:00 PM</p>
             </div>
         </div>
         <div class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</div>
