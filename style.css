@@ -40,12 +40,11 @@ nav {
 .btn-unique { 
     position: relative; padding: 14px 35px; 
     background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; /* Pill Shape */
+    border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; 
     color: #fff !important; text-decoration: none; text-transform: uppercase; 
     letter-spacing: 2px; font-size: 0.85rem; overflow: hidden; transition: all 0.4s ease; 
     display: inline-block; z-index: 1; cursor: pointer;
 }
-/* The Shimmer Effect */
 .btn-unique::before {
     content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
@@ -61,7 +60,6 @@ nav {
 .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(10,17,40,0.5), rgba(10,17,40,0.9)); z-index: 1; }
 
-/* Perfectly Centered Hero Text */
 .hero-content { 
     position: relative; z-index: 2; display: flex; flex-direction: column; 
     align-items: center; justify-content: center; text-align: center; width: 100%;
@@ -69,7 +67,6 @@ nav {
 .hero h1 { font-size: 5rem; color: var(--text-light); margin-bottom: 20px; letter-spacing: 4px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 .hero p { font-size: 1.2rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; text-transform: uppercase; }
 
-/* The Slideshow Animation */
 .slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: brightness(0.9); }
 .slide:nth-child(1) { animation-delay: 0s; }
@@ -110,3 +107,54 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
 .footer-logo { font-family: var(--font-head); color: var(--text-light); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 4px; }
 .footer-logo span { color: var(--primary); }
 .copyright { font-size: 0.85rem; color: #666; margin-top: 40px; }
+
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN (FOR PHONES)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* Compress Navigation Menu */
+    nav { flex-direction: column; padding: 15px 5vw; }
+    .logo { margin-bottom: 15px; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .nav-links a { margin-left: 0; font-size: 0.75rem; }
+    .btn-unique { padding: 10px 20px; font-size: 0.75rem !important; margin-left: 0 !important; }
+
+    /* Scale Down Hero Headings */
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 0.95rem; padding: 0 20px; }
+    .page-header h1 { font-size: 2.8rem; }
+
+    /* Shrink Section Padding */
+    section { padding: 60px 5vw; }
+    .section-title { font-size: 2.2rem; }
+    .section-subtitle { margin-bottom: 40px; }
+
+    /* Force Grids into a Single Column */
+    .rooms-grid, .amenities-grid { 
+        grid-template-columns: 1fr !important; 
+    }
+    
+    /* Fix Dining Section Text Padding */
+    .rooms-grid > div { padding: 0 15px !important; }
+    .rooms-grid h3 { font-size: 1.6rem !important; }
+
+    /* Compress the Contact Page Glass Panel */
+    .glass-panel {
+        grid-template-columns: 1fr !important;
+        padding: 30px !important;
+        margin-top: -30px !important;
+        gap: 30px !important;
+    }
+    .contact-info p { font-size: 0.95rem !important; flex-direction: column; }
+    .contact-info strong { margin-bottom: 5px; }
+
+    /* Compress Booking Page Container */
+    .booking-container {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Footer adjustments */
+    footer { padding: 60px 5vw 30px; }
+}
