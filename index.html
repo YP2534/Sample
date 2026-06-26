@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A.S. CLUB | Premium Stay & Recreation</title>
+    <title>Hotel A S Club | Premium Stay & Recreation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <!-- The logo now perfectly mimics the neon outline from your photo -->
-        <div class="logo">A.S.CLUB</div>
+        <div class="logo">A S <span>Club</span></div>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
             <a href="#amenities">Amenities</a>
             <a href="banquets.html">Banquets</a>
             <a href="contact.html">Contact</a>
-            <a href="book.html" class="btn-red">Reserve</a>
+            <!-- New Unique Nav Button -->
+            <a href="book.html" class="btn-unique" style="margin-left: 35px;">Reserve</a>
         </div>
     </nav>
 
     <!-- Animated Cinematic Slideshow Hero -->
     <header class="hero">
         <div class="slideshow-container">
-            <!-- Modern Resort & Nightlife imagery -->
+            <!-- Your Chosen Photos (Untouched) -->
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1920&q=80');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1920&q=80');"></div>
@@ -33,14 +33,16 @@
         
         <div class="hero-overlay"></div>
 
+        <!-- Perfectly Centered Text -->
         <div class="hero-content">
             <h1>Experience The Club</h1>
-            <p>Premium accommodations, multi-cuisine dining, and elite recreation in MIDC Waluj.</p>
-            <a href="book.html" class="btn-red" style="font-size: 1rem; padding: 18px 45px; margin-top: 20px;">Book Your Stay</a>
+            <p>Unparalleled elegance, fine dining, and elite recreation in MIDC Waluj.</p>
+            <!-- New Unique Main Button -->
+            <a href="book.html" class="btn-unique" style="margin-top: 30px; font-size: 1rem; padding: 18px 50px;">Book Your Stay</a>
         </div>
     </header>
 
-    <!-- NEW: Recreation & Amenities Section (Based on Image Panels) -->
+    <!-- Recreation & Amenities Section -->
     <section id="amenities">
         <h2 class="section-title">Recreation & Wellness</h2>
         <p class="section-subtitle">Exclusive Facilities For Our Guests</p>
@@ -69,20 +71,20 @@
         </div>
     </section>
 
-    <!-- NEW: Dining & Food Section -->
-    <section style="background: #0a0a0a;">
+    <!-- Dining & Food Section -->
+    <section style="background: rgba(0,0,0,0.2);">
         <h2 class="section-title">Culinary Excellence</h2>
         <p class="section-subtitle">Multi-Cuisine Restaurant & Bar</p>
         
         <div class="rooms-grid" style="align-items: center; max-width: 1200px; margin: 0 auto;">
             <div>
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Restaurant Bar" style="width: 100%; border-radius: 4px; border: 1px solid #333;">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Restaurant Bar" style="width: 100%; border-radius: 8px;">
             </div>
             <div style="padding: 0 40px;">
-                <h3 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">Taste The Difference</h3>
+                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-light);">Taste The Difference</h3>
                 <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">Whether you are craving authentic local Maharashtrian spices, North Indian delicacies, or continental comfort food, our master chefs deliver an unforgettable dining experience.</p>
-                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.8;">Enjoy your meal in our sophisticated dining hall, or relax with premium spirits and handcrafted cocktails at our well-stocked bar.</p>
-                <a href="contact.html" class="btn-red">Reserve a Table</a>
+                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; line-height: 1.8;">Enjoy your meal in our sophisticated dining hall, or relax with premium spirits and handcrafted cocktails at our well-stocked bar.</p>
+                <a href="contact.html" class="btn-unique">Reserve a Table</a>
             </div>
         </div>
     </section>
@@ -93,34 +95,34 @@
         <p class="section-subtitle">52 Exquisite Rooms & Suites</p>
 
         <div class="rooms-grid">
-            <div class="room-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
-                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+            <div class="room-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <div style="height: 280px; background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
                     <h3>Deluxe AC Room</h3>
                     <p>Modern decor featuring high-speed Wi-Fi, flat-screen television, and 24/7 room service.</p>
                 </div>
             </div>
-            <div class="room-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
-                <div style="height: 250px; background: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
+            <div class="room-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <div style="height: 280px; background: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
                 <div class="room-info">
                     <h3>Executive Suite</h3>
                     <p>Our premium offering with a private seating area, luxury bath amenities, and a mini-bar.</p>
                 </div>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="rooms.html" class="btn-red">View All Rooms</a>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="rooms.html" class="btn-unique">View All Rooms</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">A.S.CLUB</div>
+        <div class="footer-logo">A S <span>Club</span></div>
         <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
         <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
         
-        <p class="copyright">&copy; 2026 Hotel A.S. Club. All Rights Reserved.</p>
-        <a href="admin.html" style="color: #333; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
+        <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
     </footer>
 
     <!-- 3D Card Script -->
