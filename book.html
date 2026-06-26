@@ -6,39 +6,106 @@
     <title>Hotel A S Club | Reserve Your Stay</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .booking-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 350px; gap: 40px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--secondary); }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
-        .summary-card { background: #f9f9f9; padding: 30px; border-radius: 8px; border-top: 4px solid var(--primary); height: fit-content; }
-        .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; color: #555; }
-        .summary-total { font-size: 1.5rem; font-weight: 700; color: var(--secondary); border-top: 2px solid #ddd; padding-top: 15px; margin-top: 15px; display: flex; justify-content: space-between; }
-        .error-msg { color: red; font-size: 0.9rem; display: none; margin-top: 5px; }
+        /* Specific Header for Booking Page */
+        .page-header {
+            height: 45vh;
+            background: linear-gradient(rgba(10,17,40,0.8), rgba(10,17,40,0.95)), url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex; justify-content: center; align-items: center; text-align: center;
+            padding-top: 80px; 
+        }
+        .page-header h1 { font-size: 4rem; letter-spacing: 2px; color: var(--text-light); }
+
+        /* Booking Container Layout */
+        .booking-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 400px; 
+            gap: 50px; 
+        }
+
+        /* Form Styling for Dark Theme */
+        .custom-form h2 { color: var(--primary); margin-bottom: 30px; font-size: 2rem; }
+        .custom-form .form-group { margin-bottom: 25px; }
+        .custom-form label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .custom-form input[type="date"], 
+        .custom-form input[type="text"], 
+        .custom-form select { 
+            width: 100%; padding: 15px; 
+            background: rgba(0, 0, 0, 0.3); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            color: #fff; font-size: 1rem; 
+            border-radius: 4px; transition: 0.3s;
+        }
+        
+        /* Dropdown options need a dark background so text is visible */
+        .custom-form select option { background: var(--bg-dark); color: #fff; }
+        
+        .custom-form input:focus, .custom-form select:focus { 
+            outline: none; border-color: var(--primary); box-shadow: 0 0 10px rgba(203, 163, 101, 0.2); 
+        }
+
+        /* Add-ons styling */
+        .checkbox-group { display: flex; align-items: center; margin-bottom: 12px; color: var(--text-light); font-size: 1rem; }
+        .checkbox-group input { margin-right: 15px; width: 20px; height: 20px; accent-color: var(--primary); cursor: pointer; }
+
+        /* Frosted Glass Summary Card */
+        .summary-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(15px); 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            height: fit-content; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .summary-card h3 { font-size: 1.8rem; margin-bottom: 25px; color: var(--text-light); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; color: var(--text-muted); font-size: 1.1rem; }
+        .summary-row span:last-child { color: var(--text-light); font-weight: bold; }
+        .summary-total { font-family: var(--font-head); font-size: 1.8rem; color: var(--primary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px; display: flex; justify-content: space-between; }
+        
+        .error-msg { color: #ff4c4c; font-size: 0.9rem; display: none; margin-top: 8px; letter-spacing: 1px; }
+
+        /* Map Section */
+        .map-section { max-width: 1200px; margin: 80px auto 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+
+        /* MOBILE RESPONSIVE UPDATES FOR THIS PAGE */
+        @media screen and (max-width: 768px) {
+            .booking-container { grid-template-columns: 1fr; gap: 40px; }
+            .date-grid { grid-template-columns: 1fr !important; }
+            .summary-card { padding: 30px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Updated Navigation with Mobile Menu -->
     <nav>
-        <div class="logo">Hotel A S Club</div>
-        <div class="nav-links">
+        <div class="logo">A S <span>Club</span></div>
+        <div class="menu-toggle" id="mobile-menu">☰</div>
+        <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="rooms.html">Rooms</a>
             <a href="banquets.html">Banquets</a>
             <a href="contact.html">Contact</a>
-            <a href="admin.html" style="color: #999; font-size: 0.8rem;">Admin</a>
+            <a href="book.html" class="btn-unique active" style="margin-left: 35px;">Reserve</a>
         </div>
     </nav>
 
-    <header class="page-header" style="--bg-image: url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80'); height: 40vh;">
+    <!-- Page Header -->
+    <header class="page-header">
         <h1>Secure Reservation</h1>
     </header>
 
     <section>
         <div class="booking-container">
-            <form id="bookingForm">
-                <h2 style="margin-bottom: 30px; color: var(--secondary);">Guest Details</h2>
+            
+            <!-- Left Side: Booking Form -->
+            <form id="bookingForm" class="custom-form">
+                <h2>Guest Details</h2>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="date-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="form-group">
                         <label>Check-In Date</label>
                         <input type="date" id="checkIn" required>
@@ -60,8 +127,14 @@
 
                 <div class="form-group">
                     <label>Add-ons (Optional)</label>
-                    <div><input type="checkbox" id="addonBreakfast" value="350"> Premium Buffet Breakfast (₹350/person)</div>
-                    <div><input type="checkbox" id="addonPickup" value="1200"> Airport Pickup (₹1,200 flat)</div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="addonBreakfast" value="350"> 
+                        <label style="margin: 0; color: inherit; text-transform: none; font-size: 1rem;">Premium Buffet Breakfast (₹350/person)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="addonPickup" value="1200"> 
+                        <label style="margin: 0; color: inherit; text-transform: none; font-size: 1rem;">Airport Pickup (₹1,200 flat)</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -70,19 +143,45 @@
                 </div>
             </form>
 
+            <!-- Right Side: Live Estimate Glass Card -->
             <div class="summary-card">
-                <h3 style="margin-bottom: 20px;">Live Estimate</h3>
+                <h3>Live Estimate</h3>
                 <div class="summary-row"><span>Base Rate:</span> <span id="sumBase">₹0</span></div>
                 <div class="summary-row"><span>Nights:</span> <span id="sumNights">0</span></div>
                 <div class="summary-row"><span>Add-ons:</span> <span id="sumAddons">₹0</span></div>
                 <div class="summary-row"><span>Taxes (12%):</span> <span id="sumTax">₹0</span></div>
                 <div class="summary-total"><span>Total:</span> <span id="sumTotal">₹0</span></div>
-                <button type="button" class="btn" id="submitBtn" style="width: 100%; margin-top: 20px;">Confirm Booking</button>
+                
+                <button type="button" class="btn-unique" id="submitBtn" style="width: 100%; margin-top: 30px; text-align: center; border-radius: 4px;">Confirm Booking</button>
             </div>
+        </div>
+
+        <!-- Google Map Section (Added Below the Form) -->
+        <div class="map-section">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.48375836904!2d75.26380187600742!3d19.85008488152148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9815a369bc63%3A0xe225daca139fe110!2sHotel%20A%20S%20Club!5e0!3m2!1sen!2sin!4v1708100000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="400" 
+                style="border:0; filter: grayscale(80%) contrast(1.2); display: block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">A S <span>Club</span></div>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
+        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
+        <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
+        <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
+    </footer>
+
+    <!-- Scripts (Calculation, LocalStorage & Mobile Menu) -->
     <script>
+        // Form Elements
         const form = document.getElementById('bookingForm');
         const checkIn = document.getElementById('checkIn');
         const checkOut = document.getElementById('checkOut');
@@ -90,6 +189,7 @@
         const addonB = document.getElementById('addonBreakfast');
         const addonP = document.getElementById('addonPickup');
 
+        // Calculate Pricing Live
         function calculate() {
             if(!checkIn.value || !checkOut.value) return;
             
@@ -160,6 +260,16 @@
             // Clear the form
             document.getElementById('guestName').value = '';
         });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
     </script>
 </body>
 </html>
