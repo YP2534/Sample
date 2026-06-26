@@ -1,17 +1,17 @@
 /* =========================================
-   HOTEL A S CLUB - ROYAL SAPPHIRE THEME
+   HOTEL A S CLUB - TROPICAL OASIS (LIGHT RESORT THEME)
    GLOBAL STYLESHEET
    ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap');
 
 :root {
-    --primary: #cba365; /* Champagne Gold */
-    --bg-dark: #0a1128; /* Deep Royal Sapphire Blue */
-    --bg-light: #121c3b; /* Lighter Sapphire for Cards */
-    --text-light: #f8f9fa; /* Crisp White */
-    --text-muted: #a0aabf; /* Soft Blue-Grey */
-    --font-head: 'Cinzel', serif; /* Elegant Hotel Font */
+    --primary: #007a82; /* Tropical Resort Teal */
+    --bg-dark: #f8fafd; /* Soft Breezy Off-White (Main Body) */
+    --bg-light: #ffffff; /* Pure White (For Cards) */
+    --text-light: #2c3e50; /* Deep Charcoal (Main Text) */
+    --text-muted: #64748b; /* Soft Blue-Gray (Subtext) */
+    --font-head: 'Cinzel', serif; 
     --font-body: 'Lato', sans-serif;
 }
 
@@ -26,7 +26,7 @@ body {
     background-color: var(--bg-dark); 
     color: var(--text-light); 
     line-height: 1.6; 
-    overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+    overflow-x: hidden; 
 }
 
 /* --- TYPOGRAPHY --- */
@@ -40,8 +40,9 @@ h1, h2, h3, h4, .logo {
 nav { 
     position: fixed; top: 0; width: 100%; padding: 25px 5vw; 
     display: flex; justify-content: space-between; align-items: center; 
-    background: rgba(10, 17, 40, 0.85); backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000;
+    background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 .logo { font-size: 28px; letter-spacing: 4px; text-transform: uppercase; }
 .logo span { color: var(--primary); }
@@ -49,42 +50,45 @@ nav {
 .nav-links a { 
     color: var(--text-light); text-decoration: none; margin-left: 35px; 
     font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; 
+    font-weight: 700;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-/* --- UNIQUE BUTTON DESIGN (Frosted Glass Pill) --- */
+/* --- UNIQUE BUTTON DESIGN (Resort Pill) --- */
 .btn-unique { 
     position: relative; padding: 14px 35px; 
-    background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; 
-    color: #fff !important; text-decoration: none; text-transform: uppercase; 
-    letter-spacing: 2px; font-size: 0.85rem; overflow: hidden; transition: all 0.4s ease; 
+    background: rgba(0, 122, 130, 0.05); backdrop-filter: blur(10px);
+    border: 1px solid var(--primary); border-radius: 50px; 
+    color: var(--primary) !important; text-decoration: none; text-transform: uppercase; 
+    letter-spacing: 2px; font-size: 0.85rem; font-weight: bold; overflow: hidden; transition: all 0.4s ease; 
     display: inline-block; z-index: 1; cursor: pointer;
 }
 .btn-unique::before {
     content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0,122,130,0.2), transparent);
     transition: all 0.6s ease; z-index: -1; transform: skewX(-20deg);
 }
 .btn-unique:hover::before { left: 150%; }
 .btn-unique:hover { 
-    background: #fff; color: var(--bg-dark) !important; border-color: #fff; 
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); font-weight: bold;
+    background: var(--primary); color: #fff !important; border-color: var(--primary); 
+    box-shadow: 0 10px 20px rgba(0, 122, 130, 0.3); 
 }
 
 /* --- CINEMATIC SLIDESHOW HERO --- */
 .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(10,17,40,0.5), rgba(10,17,40,0.9)); z-index: 1; }
+/* Overlay adjusted to ensure white text pops over varied images */
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: 1; }
 
 .hero-content { 
     position: relative; z-index: 2; display: flex; flex-direction: column; 
     align-items: center; justify-content: center; text-align: center; width: 100%;
 }
-.hero h1 { font-size: 5rem; color: var(--text-light); margin-bottom: 20px; letter-spacing: 4px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-.hero p { font-size: 1.2rem; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 40px; max-width: 700px; text-transform: uppercase; }
+/* Explicitly setting text white for hero and page headers regardless of light theme */
+.hero h1 { font-size: 5rem; color: #ffffff; margin-bottom: 20px; letter-spacing: 4px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2rem; letter-spacing: 2px; color: #f0f0f0; margin-bottom: 40px; max-width: 700px; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
 .slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: brightness(0.9); }
+.slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: fadeSlides 15s infinite; filter: brightness(0.95); }
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 5s; }
 .slide:nth-child(3) { animation-delay: 10s; }
@@ -98,31 +102,31 @@ nav {
 }
 
 /* --- SECTIONS --- */
-section { padding: 100px 10vw; border-bottom: 1px solid rgba(255,255,255,0.05); }
+section { padding: 100px 10vw; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 15px; color: var(--text-light); }
 .section-subtitle { text-align: center; font-size: 0.9rem; letter-spacing: 4px; color: var(--primary); text-transform: uppercase; margin-bottom: 70px; }
 
 /* --- AMENITIES & FOOD GRIDS --- */
 .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-.amenity-card { background: var(--bg-light); padding: 40px 30px; text-align: center; border-radius: 8px; transition: 0.4s; border: 1px solid rgba(255,255,255,0.05); }
-.amenity-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+.amenity-card { background: var(--bg-light); padding: 40px 30px; text-align: center; border-radius: 8px; transition: 0.4s; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.amenity-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
 .amenity-icon { font-size: 3rem; margin-bottom: 20px; }
 .amenity-card h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary); }
 .amenity-card p { color: var(--text-muted); font-size: 0.95rem; }
 
 /* --- ROOMS --- */
 .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-.room-card { background: var(--bg-light); border-radius: 8px; transition: 0.4s; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.room-card:hover { border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+.room-card { background: var(--bg-light); border-radius: 8px; transition: 0.4s; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.room-card:hover { border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
 .room-info { padding: 40px; text-align: center; }
 .room-info h3 { font-size: 1.6rem; margin-bottom: 15px; }
 .room-info p { color: var(--text-muted); font-size: 0.95rem; }
 
 /* --- FOOTER --- */
-footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
+footer { background: #ffffff; padding: 80px 10vw 40px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
 .footer-logo { font-family: var(--font-head); color: var(--text-light); font-size: 2.2rem; margin-bottom: 20px; letter-spacing: 4px; }
 .footer-logo span { color: var(--primary); }
-.copyright { font-size: 0.85rem; color: #666; margin-top: 40px; }
+.copyright { font-size: 0.85rem; color: #888; margin-top: 40px; }
 
 
 /* =========================================
@@ -144,10 +148,10 @@ footer { background: #050a17; padding: 80px 10vw 40px; text-align: center; }
         flex-direction: column; 
         text-align: center; 
         padding: 20px 0;
-        background: rgba(10, 17, 40, 0.98); 
+        background: rgba(255, 255, 255, 0.98); 
         border-radius: 8px;
         margin-top: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     
     /* This class is toggled by JavaScript */
