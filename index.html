@@ -1,149 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel A S Club | Premium Stay & Recreation</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marwar Handicrafts Jaipur | Authentic Rajasthani Artistry | 5.0★ (916)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>tailwind.config={theme:{extend:{colors:{sand:'#E8D8C8',maroon:'#7B1113',gold:'#D4AF37',paper:'#FAFAF8',ink:'#1A1A1A'},fontFamily:{serif:['Cormorant Garamond','serif'],sans:['Plus Jakarta Sans','sans-serif']}}}}</script>
+<style>body{background:#FAFAF8;color:#1A1A1A;font-family:'Plus Jakarta Sans',sans-serif}.serif{font-family:'Cormorant Garamond',serif}.product-card{transition:all.4s ease}.product-card:hover{transform:translateY(-5px)}.logo-fit{object-fit:contain;object-position:center}.filter-active{background:#7B1113!important;color:white!important}</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">A S <span>Club</span></div>
-        
-        <!-- The Hamburger Icon (Visible only on mobile) -->
-        <div class="menu-toggle" id="mobile-menu">☰</div>
-        
-        <!-- Added id="nav-links" for the script to target -->
-        <div class="nav-links" id="nav-links">
-            <a href="index.html">Home</a>
-            <a href="rooms.html">Rooms</a>
-            <a href="#amenities">Amenities</a>
-            <a href="banquets.html">Banquets</a>
-            <a href="contact.html">Contact</a>
-            <!-- New Unique Nav Button -->
-            <a href="book.html" class="btn-unique" style="margin-left: 35px;">Reserve</a>
-        </div>
-    </nav>
+<!-- HEADER WITH YOUR LOGO FITTED PERFECTLY -->
+<header class="sticky top-0 z-50 bg-[#FAFAF8]/95 backdrop-blur border-b border-[#E8D8C8]">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10 h-[76px] flex justify-between items-center">
+    <div class="flex items-center gap-4">
+      <!-- LOGO FROM unnamed.png - FIT PERFECTLY -->
+      <div class="w-[52px] h-[52px] bg-white border border-[#E8D8C8] rounded-full flex items-center justify-center overflow-hidden p-1.5 shadow-sm">
+        <img src="unnamed.png" alt="Marwar Handicrafts Logo" class="w-full h-full logo-fit">
+      </div>
+      <div>
+        <p class="serif font-bold text-[18px] leading-none tracking-wide">MARWAR<span class="font-normal opacity-60 ml-1">HANDICRAFTS</span></p>
+        <p class="text-[9px] tracking-[0.3em] opacity-50 mt-0.5">JAIPUR • 5.0★ 916 • AMER ROAD 302002</p>
+      </div>
+      <nav class="hidden lg:flex gap-7 ml-8 text-[11px] tracking-widest font-medium">
+        <a href="#" class="hover:text-[#7B1113]">HOME</a>
+        <a href="#collections" class="hover:text-[#7B1113]">COLLECTIONS</a>
+        <a href="#heritage" class="hover:text-[#7B1113]">HERITAGE</a>
+        <a href="#reviews" class="hover:text-[#7B1113]">REVIEWS</a>
+        <a href="#visit" class="hover:text-[#7B1113]">CONTACT</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="mailto:support@marwarhandicraftsjaipur.com" class="hidden md:inline-flex items-center gap-2 border border-[#E8D8C8] px-4 py-2.5 rounded-full text-[11px] tracking-widest bg-white">
+        <i class="fa-regular fa-envelope text-[#7B1113]"></i> EMAIL SUPPORT
+      </a>
+      <button id="cartBtn" class="bg-[#1A1A1A] text-white px-5 py-2.5 rounded-full text-[11px] tracking-widest flex items-center gap-2">
+        <i class="fa-solid fa-bag-shopping"></i> BAG (<span id="cartCount">0</span>)
+      </button>
+    </div>
+  </div>
+</header>
 
-    <!-- Animated Cinematic Slideshow Hero -->
-    <header class="hero">
-        <div class="slideshow-container">
-            <!-- Your Chosen Photos (Untouched) -->
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1542314831-c6a4d142104d?auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1920&q=80');"></div>
-        </div>
-        
-        <div class="hero-overlay"></div>
+<!-- HERO -->
+<section class="max-w-[1320px] mx-auto px-6 md:px-10 py-10 md:py-14 grid lg:grid-cols-12 gap-10 items-center">
+  <div class="lg:col-span-6">
+    <p class="text-[11px] tracking-[0.3em] text-[#7B1113] font-semibold">44, MARWAR ART PLANET, AMER RD • NEAR AMER FORT • 5.0★ 900+ REVIEWS</p>
+    <h1 class="serif text-[52px] md:text-[68px] leading-[0.85] font-bold mt-4">Authentic Rajasthani<br><span class="italic font-normal text-[#7B1113]">Artistry & Heritage</span><br>Crafts</h1>
+    <p class="text-[14px] leading-relaxed opacity-70 mt-6 max-w-[480px]">Exquisite hand-painted marble, brass sculptures, timeless decor straight from master artisans in Jaipur. Custom export packaging for domestic & international delivery.</p>
+    <div class="flex gap-3 mt-8">
+      <a href="#collections" class="bg-[#7B1113] text-white px-7 py-3.5 rounded-full text-[11px] tracking-widest">EXPLORE CATALOG</a>
+      <a href="#visit" class="border border-[#1A1A1A] px-7 py-3.5 rounded-full text-[11px] tracking-widest">CONTACT SUPPORT</a>
+    </div>
+  </div>
+  <div class="lg:col-span-6 grid grid-cols-12 gap-3">
+    <div class="col-span-7 space-y-3">
+      <img src="1 (1).jpg" onerror="this.src='https://images.unsplash.com/photo-1608111115635-38dbfa3b8c4b?auto=format&fit=crop&w=600&q=80'" class="w-full h-[380px] object-cover rounded-[24px] border border-[#E8D8C8]">
+      <div class="bg-[#E8D8C8] p-5 rounded-[20px]"><p class="serif text-[20px] leading-[0.9]">Hand-painted Marble Pots & Vases</p><p class="text-[11px] opacity-70 mt-2">Custom sizes • Export safe packing</p></div>
+    </div>
+    <div class="col-span-5 space-y-3">
+      <img src="1 (2).jpg" onerror="this.src='https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80'" class="w-full h-[220px] object-cover rounded-[24px] border border-[#E8D8C8]">
+      <img src="1 (3).jpg" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=80'" class="w-full h-[220px] object-cover rounded-[24px] border border-[#E8D8C8]">
+    </div>
+  </div>
+</section>
 
-        <!-- Perfectly Centered Text -->
-        <div class="hero-content">
-            <h1>Experience The Club</h1>
-            <p>Unparalleled elegance, fine dining, and elite recreation in MIDC Waluj.</p>
-            <!-- New Unique Main Button -->
-            <a href="book.html" class="btn-unique" style="margin-top: 30px; font-size: 1rem; padding: 18px 50px;">Book Your Stay</a>
-        </div>
-    </header>
+<!-- COLLECTIONS -->
+<section id="collections" class="bg-white border-y border-[#E8D8C8] py-14">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10">
+    <div class="flex flex-wrap justify-between gap-6 items-end mb-8">
+      <h2 class="serif text-[42px] leading-[0.9] font-bold">Featured Collections</h2>
+      <div class="flex flex-wrap gap-2" id="filters">
+        <button data-filter="all" class="filter-active border border-black px-4 py-2 rounded-full text-[11px] tracking-widest">ALL</button>
+        <button data-filter="marble" class="border border-[#E8D8C8] px-4 py-2 rounded-full text-[11px] tracking-widest">MARBLE</button>
+        <button data-filter="brass" class="border border-[#E8D8C8] px-4 py-2 rounded-full text-[11px] tracking-widest">BRASS</button>
+        <button data-filter="idols" class="border border-[#E8D8C8] px-4 py-2 rounded-full text-[11px] tracking-widest">IDOLS</button>
+        <button data-filter="lighting" class="border border-[#E8D8C8] px-4 py-2 rounded-full text-[11px] tracking-widest">LIGHTING</button>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-5" id="productGrid">
+      <div class="product-card bg-[#FAFAF8] border border-[#E8D8C8] rounded-[20px] overflow-hidden" data-cat="marble"><img src="1 (4).jpg" onerror="this.src='https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=600&q=80'" class="w-full h-[240px] object-cover"><div class="p-4"><p class="text-[10px] tracking-widest opacity-50">MARBLE • 12" x 8"</p><p class="serif font-bold text-[16px] mt-1">Peacock Marble Vase</p><p class="text-[11px] opacity-60">Mineral paint • Gloss finish</p><p class="serif font-bold text-[14px] mt-2">₹2,850</p><button onclick="addToBag('Peacock Marble Vase',2850)" class="mt-3 w-full bg-[#1A1A1A] text-white py-2.5 rounded-full text-[11px] tracking-widest">ORDER NOW</button></div></div>
+      <div class="product-card bg-[#FAFAF8] border border-[#E8D8C8] rounded-[20px] overflow-hidden" data-cat="brass"><img src="1 (1).jpg" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=80'" class="w-full h-[240px] object-cover"><div class="p-4"><p class="text-[10px] tracking-widest opacity-50">BRASS • 9"</p><p class="serif font-bold text-[16px] mt-1">Brass Elephant Set</p><p class="text-[11px] opacity-60">Antique finish • Solid brass</p><p class="serif font-bold text-[14px] mt-2">₹4,200</p><button onclick="addToBag('Brass Elephant Set',4200)" class="mt-3 w-full bg-[#1A1A1A] text-white py-2.5 rounded-full text-[11px] tracking-widest">ORDER NOW</button></div></div>
+      <div class="product-card bg-[#FAFAF8] border border-[#E8D8C8] rounded-[20px] overflow-hidden" data-cat="idols"><img src="1 (2).jpg" onerror="this.src='https://images.unsplash.com/photo-1561828996-79ebcee10d65?auto=format&fit=crop&w=600&q=80'" class="w-full h-[240px] object-cover"><div class="p-4"><p class="text-[10px] tracking-widest opacity-50">IDOLS • Chowki Ganesh</p><p class="serif font-bold text-[16px] mt-1">Chowki Ganesh Marble</p><p class="text-[11px] opacity-60">Custom sizes available</p><p class="serif font-bold text-[14px] mt-2">₹3,500</p><button onclick="addToBag('Chowki Ganesh Marble',3500)" class="mt-3 w-full bg-[#1A1A1A] text-white py-2.5 rounded-full text-[11px] tracking-widest">ORDER NOW</button></div></div>
+      <div class="product-card bg-[#FAFAF8] border border-[#E8D8C8] rounded-[20px] overflow-hidden" data-cat="lighting"><img src="1 (3).jpg" onerror="this.src='https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80'" class="w-full h-[240px] object-cover"><div class="p-4"><p class="text-[10px] tracking-widest opacity-50">LIGHTING • Set of 2</p><p class="serif font-bold text-[16px] mt-1">Jali Tealight Holder</p><p class="text-[11px] opacity-60">Festive lighting</p><p class="serif font-bold text-[14px] mt-2">₹1,250</p><button onclick="addToBag('Jali Tealight Holder Set',1250)" class="mt-3 w-full bg-[#7B1113] text-white py-2.5 rounded-full text-[11px] tracking-widest">ORDER NOW</button></div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Recreation & Amenities Section -->
-    <section id="amenities">
-        <h2 class="section-title">Recreation & Wellness</h2>
-        <p class="section-subtitle">Exclusive Facilities For Our Guests</p>
+<!-- REVIEWS + HERITAGE -->
+<section id="reviews" class="max-w-[1320px] mx-auto px-6 md:px-10 py-14 grid lg:grid-cols-12 gap-10">
+  <div class="lg:col-span-7">
+    <h2 class="serif text-[36px] font-bold">5.0★ Google — 916 Reviews</h2>
+    <div class="grid md:grid-cols-3 gap-4 mt-6">
+      <div class="border border-[#E8D8C8] bg-white p-5 rounded-[16px]"><p class="text-[13px]">"Best service and very friendly owner giving good stuff at reasonable price"</p><p class="text-[10px] opacity-50 mt-2">— 5★</p></div>
+      <div class="border border-[#E8D8C8] bg-white p-5 rounded-[16px]"><p class="text-[13px]">"Owners are humble and have many varieties and prices to choose from."</p><p class="text-[10px] opacity-50 mt-2">— 5★</p></div>
+      <div class="bg-[#1A1A1A] text-white p-5 rounded-[16px]"><p class="text-[13px]">"Beautiful place for handicraft and Rajasthani culture. Go visit once just for experience."</p><p class="text-[10px] opacity-60 mt-2">— Prateek Saini</p></div>
+    </div>
+  </div>
+  <div class="lg:col-span-5 bg-[#E8D8C8] p-6 rounded-[20px]"><p class="serif text-[22px] font-bold leading-[0.9]">Preserving Rajasthani stonecraft for 3 generations</p><p class="text-[12px] opacity-70 mt-3 leading-relaxed">Makrana marble hand-turned, mineral paints, brass lost-wax cast. Custom export packaging wooden crates, foam, safe for domestic & international.</p></div>
+</section>
 
-        <div class="amenities-grid">
-            <div class="amenity-card">
-                <div class="amenity-icon">🎱</div>
-                <h4>Indoor Sports</h4>
-                <p>Challenge your friends to a game of professional Billiards or Table Tennis in our dedicated indoor gaming lounge.</p>
-            </div>
-            <div class="amenity-card">
-                <div class="amenity-icon">🏊‍♂️</div>
-                <h4>Outdoor Pool</h4>
-                <p>Unwind in our massive crystal-clear outdoor swimming pool, complete with a relaxing attached Jacuzzi.</p>
-            </div>
-            <div class="amenity-card">
-                <div class="amenity-icon">🏋️</div>
-                <h4>Fitness Center</h4>
-                <p>Keep up with your routine in our fully-equipped modern gymnasium, featuring steam room access.</p>
-            </div>
-            <div class="amenity-card">
-                <div class="amenity-icon">🏛️</div>
-                <h4>Local Heritage</h4>
-                <p>Perfectly located as your basecamp to explore the world-famous Ajanta and Ellora Caves.</p>
-            </div>
-        </div>
-    </section>
+<!-- CONTACT - EMAIL SUPPORT -->
+<section id="visit" class="bg-white border-t border-[#E8D8C8] py-14">
+  <div class="max-w-[1320px] mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="serif text-[36px] font-bold leading-[0.9]">Visit Our Emporium</h2>
+      <div class="mt-6 space-y-3 text-[13px]">
+        <p><i class="fa-solid fa-location-dot text-[#7B1113] mr-2"></i>44, Marwar Art Planet, Amer Rd, Jaipur, Rajasthan 302002</p>
+        <p><i class="fa-regular fa-envelope text-[#7B1113] mr-2"></i>support@marwarhandicraftsjaipur.com</p>
+        <p><i class="fa-regular fa-clock text-[#7B1113] mr-2"></i>Open • Closes 9 pm • WRVQ+2Q Jaipur</p>
+      </div>
+      <div class="mt-6 bg-[#FAFAF8] border border-[#E8D8C8] rounded-[16px] h-[200px] flex items-center justify-center"><p class="text-[11px] tracking-widest opacity-50">MAP — 44 Amer Road Jaipur</p></div>
+    </div>
+    <div class="lg:col-span-7 bg-[#FAFAF8] border border-[#E8D8C8] rounded-[24px] p-7">
+      <p class="serif text-[22px] font-bold">Contact Email Support</p><p class="text-[11px] opacity-60 mt-1">We reply within 6 hours • Custom orders & export shipping</p>
+      <form id="emailForm" class="mt-6 grid md:grid-cols-2 gap-4">
+        <input required placeholder="Your Name" class="border border-[#E8D8C8] px-4 py-3 rounded-full text-[13px] bg-white">
+        <input required type="email" placeholder="Email Address" class="border border-[#E8D8C8] px-4 py-3 rounded-full text-[13px] bg-white">
+        <input placeholder="Order / Product Interest" class="md:col-span-2 border border-[#E8D8C8] px-4 py-3 rounded-full text-[13px] bg-white">
+        <textarea rows="4" required placeholder="Message — dimensions, quantity, shipping country" class="md:col-span-2 border border-[#E8D8C8] px-4 py-3 rounded-[16px] text-[13px] bg-white"></textarea>
+        <button class="md:col-span-2 bg-[#7B1113] text-white py-3.5 rounded-full text-[11px] tracking-widest font-semibold">SEND TO EMAIL SUPPORT</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <!-- Dining & Food Section -->
-    <section style="background: rgba(0,0,0,0.2);">
-        <h2 class="section-title">Culinary Excellence</h2>
-        <p class="section-subtitle">Multi-Cuisine Restaurant & Bar</p>
-        
-        <div class="rooms-grid" style="align-items: center; max-width: 1200px; margin: 0 auto;">
-            <div>
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Restaurant Bar" style="width: 100%; border-radius: 8px;">
-            </div>
-            <div style="padding: 0 40px;">
-                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-light);">Taste The Difference</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">Whether you are craving authentic local Maharashtrian spices, North Indian delicacies, or continental comfort food, our master chefs deliver an unforgettable dining experience.</p>
-                <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; line-height: 1.8;">Enjoy your meal in our sophisticated dining hall, or relax with premium spirits and handcrafted cocktails at our well-stocked bar.</p>
-                <a href="contact.html" class="btn-unique">Reserve a Table</a>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER + SUPPORT NUMBER ONLY AT SIDE/DOWN -->
+<footer class="bg-[#1A1A1A] text-white py-8 px-6 md:px-10">
+  <div class="max-w-[1320px] mx-auto flex flex-col md:flex-row justify-between gap-4 text-[11px]">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden p-1"><img src="unnamed.png" class="w-full h-full logo-fit"></div>
+      <p>© Marwar Handicrafts Jaipur • 44 Amer Rd • 5.0★ (916) • Handicrafts Wholesaler</p>
+    </div>
+    <div class="opacity-60">Marble Paintings • Pots & Vases • Brass Statues • Chowki Ganesh • Lamps • Camel Bone Jewelry</div>
+  </div>
+</footer>
 
-    <!-- Rooms Teaser -->
-    <section>
-        <h2 class="section-title">Luxury Accommodations</h2>
-        <p class="section-subtitle">52 Exquisite Rooms & Suites</p>
+<!-- SUPPORT NUMBER ONLY - SIDE FLOATING + BOTTOM -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2">
+  <a href="tel:08769811321" class="bg-white border border-[#E8D8C8] shadow-lg px-4 py-3 rounded-full text-[11px] font-semibold flex items-center gap-2">
+    <span class="w-8 h-8 bg-[#1A1A1A] text-white rounded-full flex items-center justify-center"><i class="fa-solid fa-headset text-[12px]"></i></span>
+    SUPPORT<br><span class="text-[12px] font-bold">087698 11321</span>
+  </a>
+</div>
 
-        <div class="rooms-grid">
-            <div class="room-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
-                <div style="height: 280px; background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
-                <div class="room-info">
-                    <h3>Deluxe AC Room</h3>
-                    <p>Modern decor featuring high-speed Wi-Fi, flat-screen television, and 24/7 room service.</p>
-                </div>
-            </div>
-            <div class="room-card" data-tilt data-tilt-max="5" data-tilt-speed="400">
-                <div style="height: 280px; background: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80') center/cover;"></div>
-                <div class="room-info">
-                    <h3>Executive Suite</h3>
-                    <p>Our premium offering with a private seating area, luxury bath amenities, and a mini-bar.</p>
-                </div>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="rooms.html" class="btn-unique">View All Rooms</a>
-        </div>
-    </section>
+<!-- CART DRAWER -->
+<div id="cartDrawer" class="fixed inset-0 z-[60] hidden"><div class="absolute inset-0 bg-black/40" onclick="closeCart()"></div><div class="absolute right-0 top-0 w-[380px] max-w-[90vw] h-full bg-[#FAFAF8] border-l border-[#E8D8C8] p-6"><div class="flex justify-between items-center"><p class="serif text-[20px] font-bold">Your Bag</p><button onclick="closeCart()" class="w-8 h-8 border border-[#E8D8C8] rounded-full"><i class="fa-solid fa-xmark"></i></button></div><div id="cartItems" class="mt-6 space-y-3"></div><div class="mt-6 border-t border-[#E8D8C8] pt-4"><p class="flex justify-between text-[13px]"><span>Total</span><span id="cartTotal" class="font-bold">₹0</span></p><button onclick="checkoutEmail()" class="mt-4 w-full bg-[#7B1113] text-white py-3 rounded-full text-[11px] tracking-widest">CHECKOUT VIA EMAIL SUPPORT</button><p class="text-[10px] opacity-50 mt-2 text-center">We will email you invoice & shipping quote</p></div></div></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">A S <span>Club</span></div>
-        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">6 K.M. Stone, Nagar Road, Near Chordia Petrol Pump</p>
-        <p style="color: #888; letter-spacing: 1px; margin-bottom: 10px;">MIDC Waluj, Chhatrapati Sambhajinagar</p>
-        
-        <p class="copyright">&copy; 2026 Hotel A S Club. All Rights Reserved.</p>
-        <a href="admin.html" style="color: #444; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: inline-block;">Director Access</a>
-    </footer>
-
-    <!-- 3D Card Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        if (mobileMenu && navLinks) {
-            mobileMenu.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-        }
-    </script>
-
+<script>
+let cart=[];
+function addToBag(name,price){cart.push({name,price}); updateCart(); document.getElementById('cartDrawer').classList.remove('hidden');}
+function updateCart(){document.getElementById('cartCount').innerText=cart.length; let html=''; let total=0; cart.forEach((it,i)=>{total+=it.price; html+=`<div class='flex justify-between items-center bg-white border border-[#E8D8C8] p-3 rounded-[12px] text-[12px]'><span>${it.name}</span><span>₹${it.price} <button onclick='cart.splice(${i},1);updateCart()' class='ml-2 opacity-50'><i class='fa-solid fa-trash'></i></button></span></div>`}); document.getElementById('cartItems').innerHTML=html||'<p class=text-[12px] opacity-60>Bag empty</p>'; document.getElementById('cartTotal').innerText='₹'+total;}
+function closeCart(){document.getElementById('cartDrawer').classList.add('hidden');}
+document.getElementById('cartBtn').addEventListener('click',()=>document.getElementById('cartDrawer').classList.remove('hidden'));
+function checkoutEmail(){if(cart.length==0)return alert('Bag empty'); const list=cart.map(c=>`${c.name} - ₹${c.price}`).join(', '); window.location.href=`mailto:support@marwarhandicraftsjaipur.com?subject=Order Inquiry - Marwar Handicrafts&body=Hi Team,%0A%0AI want to order:%0A${encodeURIComponent(list)}%0A%0ATotal: ${document.getElementById('cartTotal').innerText}%0A%0APlease share shipping cost and payment link.`;}
+document.getElementById('emailForm').addEventListener('submit',e=>{e.preventDefault(); const fd=new FormData(e.target); window.location.href=`mailto:support@marwarhandicraftsjaipur.com?subject=Support Inquiry - Marwar Handicrafts Jaipur&body=${encodeURIComponent('Name:'+e.target[0].value+'\nEmail:'+e.target[1].value+'\nInterest:'+e.target[2].value+'\nMessage:'+e.target[3].value)}`; alert('Opening email client to support@marwarhandicraftsjaipur.com');});
+document.querySelectorAll('#filters button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('filter-active')); btn.classList.add('filter-active'); const f=btn.dataset.filter; document.querySelectorAll('#productGrid > div').forEach(c=>{c.style.display=(f==='all'||c.dataset.cat===f)?'block':'none'});});});
+</script>
 </body>
 </html>
