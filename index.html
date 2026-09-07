@@ -52,15 +52,19 @@
       gap: 8px;
     }
 
-    .top-bar a {
+    .top-bar strong {
       color: #ffd89b;
-      font-weight: 600;
     }
 
     .top-bar-contact {
       display: flex;
       gap: 16px;
       align-items: center;
+    }
+
+    .top-bar-contact a {
+      color: #ffffff;
+      text-decoration: underline;
     }
 
     /* Header */
@@ -147,7 +151,12 @@
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .action-btn:hover {
+      color: var(--primary);
     }
 
     .cart-badge {
@@ -163,7 +172,7 @@
       justify-content: center;
     }
 
-    /* Category Nav */
+    /* Category Navigation */
     .category-nav {
       background: var(--bg-light);
       border-top: 1px solid var(--border-color);
@@ -200,7 +209,7 @@
       color: #c91823;
     }
 
-    /* Ticker Banner */
+    /* Sale Ticker */
     .sale-ticker {
       background: #fff3d6;
       color: #7a4600;
@@ -212,7 +221,7 @@
       border-bottom: 1px solid #ffe1a0;
     }
 
-    /* Hero Section */
+    /* Hero Banner */
     .hero-banner {
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: var(--white);
@@ -286,7 +295,7 @@
       color: var(--text-dark);
     }
 
-    /* Pill Categories */
+    /* Quick Category Pills */
     .quick-categories {
       max-width: 1280px;
       margin: 40px auto 20px;
@@ -328,7 +337,7 @@
       color: #333333;
     }
 
-    /* Products Section */
+    /* Product Section */
     .section-title-wrap {
       max-width: 1280px;
       margin: 40px auto 24px;
@@ -480,7 +489,7 @@
       background: var(--white);
       color: var(--primary);
       border: 1px solid var(--primary);
-      padding: 8px 10px;
+      padding: 9px 10px;
       font-size: 12px;
       font-weight: 600;
       border-radius: 4px;
@@ -493,21 +502,21 @@
       color: var(--white);
     }
 
-    .btn-whatsapp-inquiry {
-      background: #25d366;
+    .btn-buy-now {
+      background: var(--primary);
       color: var(--white);
-      border: 1px solid #25d366;
-      padding: 8px 10px;
+      border: 1px solid var(--primary);
+      padding: 9px 10px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 4px;
       cursor: pointer;
       text-align: center;
       transition: background 0.2s;
     }
 
-    .btn-whatsapp-inquiry:hover {
-      background: #1ebc59;
+    .btn-buy-now:hover {
+      background: var(--primary-dark);
     }
 
     /* Trust / Features Bar */
@@ -601,6 +610,22 @@
 
     .footer-col ul li a:hover {
       color: #ffffff;
+    }
+
+    .footer-btn-email {
+      display: inline-block;
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 10px;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    .footer-btn-email:hover {
+      background: var(--primary-dark);
     }
 
     .footer-bottom {
@@ -742,34 +767,153 @@
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 8px;
     }
 
-    .btn-checkout-whatsapp {
+    .btn-checkout:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Checkout Modal */
+    .checkout-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: #25d366;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .checkout-modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .checkout-modal {
+      background: var(--white);
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-header h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 4px;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 13px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .order-summary-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .btn-place-order {
+      width: 100%;
+      background: var(--primary);
       color: var(--white);
       border: none;
-      padding: 10px;
-      font-size: 13px;
+      padding: 14px;
+      font-size: 14px;
       font-weight: 700;
       border-radius: 4px;
       cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-place-order:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Success Confirmation Screen */
+    .order-success {
+      display: none;
       text-align: center;
-      display: block;
+      padding: 30px 10px;
+    }
+
+    .order-success h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      color: #1b8a43;
+      margin-bottom: 12px;
+    }
+
+    .order-success p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Utility Bar -->
+  <!-- Top Announcement Bar -->
   <div class="top-bar">
     <div>
       <span>AMAZING OFFER! GET 10% OFF WITH COUPON: <strong>MARWAR10</strong> | FREE DOMESTIC SHIPPING</span>
     </div>
     <div class="top-bar-contact">
+      <span>✉️ <a href="mailto:support@marwarhandicrafts.com">support@marwarhandicrafts.com</a></span>
       <span>📞 +91 87698 11321</span>
-      <span>✉️ info@marwarhandicrafts.com</span>
       <span>📍 Amer Road, Jaipur</span>
     </div>
   </div>
@@ -788,9 +932,9 @@
       </div>
 
       <div class="header-actions">
-        <div class="action-btn" onclick="openWhatsApp('General Inquiry')">
-          <span>💬 WhatsApp</span>
-        </div>
+        <a href="mailto:support@marwarhandicrafts.com?subject=Customer%20Support%20Inquiry%20-%20Marwar%20Handicrafts" class="action-btn">
+          <span>✉️ Mail Support</span>
+        </a>
         <div class="action-btn" onclick="toggleCart()">
           <span>🛒 Cart</span>
           <span class="cart-badge" id="cartCount">0</span>
@@ -826,7 +970,7 @@
       </p>
       <div class="hero-buttons">
         <a href="#productsSection" class="btn btn-primary">EXPLORE CATALOG</a>
-        <a href="https://wa.me/918769811321?text=Hi%2C+I+want+to+inquire+about+Marwar+Handicrafts+collection" target="_blank" class="btn btn-outline">ORDER VIA WHATSAPP</a>
+        <a href="mailto:info@marwarhandicrafts.com?subject=Handicrafts%20Catalog%20Inquiry" class="btn btn-outline">EMAIL INQUIRY</a>
       </div>
     </div>
   </section>
@@ -885,8 +1029,8 @@
         <p>UPI, Credit/Debit Cards, Net Banking & Cash on Delivery.</p>
       </div>
       <div class="trust-item">
-        <h4>⭐ 5.0★ Rated Emporium</h4>
-        <p>Over 900+ positive reviews from domestic & overseas tourists.</p>
+        <h4>✉️ Dedicated Mail Support</h4>
+        <p>support@marwarhandicrafts.com • Quick 2-hour response.</p>
       </div>
     </div>
   </section>
@@ -900,7 +1044,8 @@
           Located along the historic Amer Road in Jaipur, Marwar Handicrafts showcases the rich legacy of Rajasthani artisanal stonecraft, brass casting, and handmade home accents.
         </p>
         <p><strong>Address:</strong> 44, Marwar Art Planet, Amer Rd, near Golimar Sadan, Jaipur, Rajasthan 302002</p>
-        <p><strong>Contact:</strong> +91 87698 11321 | info@marwarhandicrafts.com</p>
+        <p><strong>Support Email:</strong> support@marwarhandicrafts.com</p>
+        <p><strong>Phone:</strong> +91 87698 11321</p>
       </div>
 
       <div class="footer-col">
@@ -926,17 +1071,17 @@
       </div>
 
       <div class="footer-col">
-        <h5>ORDER ON WHATSAPP</h5>
-        <p>Need custom sizes, bulk export orders, or gift hampers? Chat directly with our Jaipur showroom team.</p>
-        <button class="btn-checkout-whatsapp" onclick="openWhatsApp('Direct Showroom Inquiry')">
-          Chat on WhatsApp: +91 87698 11321
-        </button>
+        <h5>EMAIL SUPPORT & BULK ORDERS</h5>
+        <p>Need custom sizes, bespoke marble carving, or wedding gift hampers? Email our team directly.</p>
+        <a href="mailto:support@marwarhandicrafts.com?subject=Showroom%20Inquiry%20-%20Marwar%20Handicrafts" class="footer-btn-email">
+          Email: support@marwarhandicrafts.com
+        </a>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div>© 2026 Marwar Handicrafts Jaipur. All Rights Reserved.</div>
-      <div>Payment Partners: UPI • RuPay • Visa • Mastercard • Net Banking</div>
+      <div>Payment Partners: UPI • RuPay • Visa • Mastercard • Net Banking • Cash on Delivery</div>
     </div>
   </footer>
 
@@ -956,13 +1101,89 @@
         <span id="cartSubtotal">₹0.00</span>
       </div>
       <p style="font-size:11px; color:#27ae60; margin-bottom:12px; font-weight:600;">✓ Free Shipping & All Taxes Included</p>
-      <button class="btn-checkout" onclick="alert('Redirecting to Secure Payment Gateway (Razorpay/UPI)...')">Proceed to Checkout</button>
-      <button class="btn-checkout-whatsapp" onclick="checkoutViaWhatsApp()">Order via WhatsApp</button>
+      <button class="btn-checkout" onclick="openCheckoutModal()">Proceed to Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal-backdrop" id="checkoutModalBackdrop">
+    <div class="checkout-modal">
+      <div class="modal-header">
+        <h3 id="checkoutModalTitle">Complete Your Order</h3>
+        <button class="btn-close-cart" onclick="closeCheckoutModal()">✕</button>
+      </div>
+
+      <div id="checkoutFormContainer">
+        <div class="order-summary-box">
+          <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+            <span>Items Total:</span>
+            <strong id="modalTotalAmount">₹0.00</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; color:#27ae60;">
+            <span>Shipping:</span>
+            <span>FREE Delivery</span>
+          </div>
+        </div>
+
+        <form id="orderForm" onsubmit="handlePlaceOrder(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="custName" required placeholder="e.g. Yash Pawar" />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="custPhone" required placeholder="e.g. 9876543210" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address (For Order Confirmation & Tracking) *</label>
+            <input type="email" id="custEmail" required placeholder="yourname@gmail.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Complete Delivery Address *</label>
+            <textarea id="custAddress" rows="2" required placeholder="House/Flat No., Street, Landmark"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" id="custCity" required placeholder="e.g. Pune" />
+            </div>
+            <div class="form-group">
+              <label>PIN Code *</label>
+              <input type="text" id="custPincode" required placeholder="e.g. 411001" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Payment Method *</label>
+            <select id="paymentMethod">
+              <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+              <option value="UPI / QR Code">UPI (Google Pay, PhonePe, Paytm)</option>
+              <option value="Credit / Debit Card">Credit / Debit Card</option>
+              <option value="Net Banking">Net Banking</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-place-order">Place Order</button>
+        </form>
+      </div>
+
+      <div class="order-success" id="orderSuccessScreen">
+        <h4>🎉 Order Placed Successfully!</h4>
+        <p id="orderSuccessText">
+          Thank you! Your order has been placed. An order confirmation invoice and tracking updates have been sent to your email.
+        </p>
+        <button class="btn btn-primary" onclick="resetOrderFlow()">Continue Shopping</button>
+      </div>
     </div>
   </div>
 
   <script>
-    // Product Catalog Data
+    // Product Catalog
     const products = [
       {
         id: 1,
@@ -1068,7 +1289,7 @@
     function renderProducts(items) {
       const grid = document.getElementById("productGrid");
       if (items.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; padding:40px; color:#888;">No products found in this category.</p>';
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align:center; padding:40px; color:#888;">No products found matching your criteria.</p>';
         return;
       }
 
@@ -1090,14 +1311,14 @@
             </div>
             <div class="product-actions">
               <button class="btn-add-cart" onclick="addToCart(${p.id})">Add to Cart</button>
-              <button class="btn-whatsapp-inquiry" onclick="inquireProduct('${encodeURIComponent(p.name)}', ${p.price})">WhatsApp</button>
+              <button class="btn-buy-now" onclick="buyNow(${p.id})">Buy Now</button>
             </div>
           </div>
         </div>
       `).join("");
     }
 
-    // Filter by Category
+    // Filter Category
     function filterCategory(cat) {
       document.querySelectorAll(".nav-item").forEach(el => el.classList.remove("active"));
       event?.target?.classList?.add("active");
@@ -1111,7 +1332,7 @@
       }
     }
 
-    // Search function
+    // Search
     function handleSearch() {
       const query = document.getElementById("searchInput").value.toLowerCase().trim();
       const filtered = products.filter(p => 
@@ -1121,7 +1342,7 @@
       renderProducts(filtered);
     }
 
-    // Cart Handlers
+    // Cart Logic
     function toggleCart() {
       document.getElementById("cartBackdrop").classList.toggle("active");
       document.getElementById("cartDrawer").classList.toggle("active");
@@ -1137,6 +1358,18 @@
       }
       updateCartUI();
       toggleCart();
+    }
+
+    function buyNow(productId) {
+      const item = products.find(p => p.id === productId);
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+      updateCartUI();
+      openCheckoutModal();
     }
 
     function updateCartUI() {
@@ -1163,7 +1396,7 @@
               <div class="cart-item-title">${item.name}</div>
               <div class="cart-item-price">Rs. ${item.price.toLocaleString('en-IN')}.00 × ${item.quantity}</div>
             </div>
-            <button onclick="removeFromCart(${idx})" style="background:none; border:none; color:#c0392b; cursor:pointer; font-size:14px;">✕</button>
+            <button onclick="removeFromCart(${idx})" style="background:none; border:none; color:#c0392b; cursor:pointer; font-size:14px; padding:4px;">✕</button>
           </div>
         `;
       }).join("");
@@ -1176,33 +1409,58 @@
       updateCartUI();
     }
 
-    // WhatsApp Triggers
-    function openWhatsApp(topic) {
-      const text = encodeURIComponent(`Hello Marwar Handicrafts Jaipur, I would like to inquire about: ${topic}`);
-      window.open(`https://wa.me/918769811321?text=${text}`, "_blank");
-    }
-
-    function inquireProduct(productName, price) {
-      const text = encodeURIComponent(`Namaste, I am interested in purchasing "${decodeURIComponent(productName)}" priced at Rs. ${price}. Is it in stock for delivery?`);
-      window.open(`https://wa.me/918769811321?text=${text}`, "_blank");
-    }
-
-    function checkoutViaWhatsApp() {
+    // Checkout Modal Logic
+    function openCheckoutModal() {
       if (cart.length === 0) {
-        alert("Your cart is empty! Please add some items first.");
+        alert("Your cart is empty. Please add items to cart first.");
         return;
       }
-      let orderSummary = "Hello Marwar Handicrafts Jaipur, I would like to place an order:%0A";
-      let total = 0;
-      cart.forEach(item => {
-        orderSummary += `- ${item.name} (Qty: ${item.quantity}) = Rs. ${item.price * item.quantity}%0A`;
-        total += item.price * item.quantity;
-      });
-      orderSummary += `%0ATotal Order Value: Rs. ${total}%0APlease let me know the payment and delivery procedure.`;
-      window.open(`https://wa.me/918769811321?text=${orderSummary}`, "_blank");
+      document.getElementById("cartBackdrop").classList.remove("active");
+      document.getElementById("cartDrawer").classList.remove("active");
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      document.getElementById("modalTotalAmount").innerText = "₹" + subtotal.toLocaleString('en-IN') + ".00";
+      document.getElementById("checkoutFormContainer").style.display = "block";
+      document.getElementById("orderSuccessScreen").style.display = "none";
+      document.getElementById("checkoutModalBackdrop").classList.add("active");
     }
 
-    // Initial load
+    function closeCheckoutModal() {
+      document.getElementById("checkoutModalBackdrop").classList.remove("active");
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById("custName").value;
+      const email = document.getElementById("custEmail").value;
+      const phone = document.getElementById("custPhone").value;
+      const address = document.getElementById("custAddress").value;
+      const city = document.getElementById("custCity").value;
+      const pincode = document.getElementById("custPincode").value;
+      const payment = document.getElementById("paymentMethod").value;
+      const orderId = "MW-" + Math.floor(100000 + Math.random() * 900000);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      document.getElementById("checkoutFormContainer").style.display = "none";
+      document.getElementById("orderSuccessScreen").style.display = "block";
+      document.getElementById("orderSuccessText").innerHTML = `
+        Thank you, <strong>${name}</strong>!<br><br>
+        Your order <strong>#${orderId}</strong> for <strong>₹${subtotal.toLocaleString('en-IN')}.00</strong> has been confirmed via <strong>${payment}</strong>.<br><br>
+        A confirmation receipt with dispatch tracking has been dispatched to <strong>${email}</strong> and SMS notification sent to <strong>${phone}</strong>.<br>
+        Delivery Address: ${address}, ${city} - ${pincode}.
+      `;
+
+      // Clear cart
+      cart = [];
+      updateCartUI();
+    }
+
+    function resetOrderFlow() {
+      closeCheckoutModal();
+      document.getElementById("orderForm").reset();
+    }
+
+    // Initial Load
     document.addEventListener("DOMContentLoaded", () => {
       renderProducts(products);
       document.getElementById("searchInput").addEventListener("keypress", (e) => {
